@@ -22,6 +22,12 @@
 		A7A3DF1826793131004CA150 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1726793131004CA150 /* GalleryItemCell.swift */; };
 		A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
 		A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
+		A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF25267933D6004CA150 /* AppDelegate.swift */; };
+		A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF27267933D6004CA150 /* SceneDelegate.swift */; };
+		A7A3DF2A267933D6004CA150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF29267933D6004CA150 /* ViewController.swift */; };
+		A7A3DF2D267933D6004CA150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2B267933D6004CA150 /* Main.storyboard */; };
+		A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2E267933DB004CA150 /* Assets.xcassets */; };
+		A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,14 @@
 		A7A3DF1726793131004CA150 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
 		A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TestsHelper.swift"; sourceTree = "<group>"; };
 		A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryItemCell+TestHelpers.swift"; sourceTree = "<group>"; };
+		A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiskerGalleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A3DF25267933D6004CA150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7A3DF27267933D6004CA150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A7A3DF29267933D6004CA150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7A3DF2C267933D6004CA150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7A3DF2E267933DB004CA150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7A3DF31267933DB004CA150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A7A3DF33267933DB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7A3DF20267933D6004CA150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,6 +100,7 @@
 			children = (
 				A7A3DEE22678DECB004CA150 /* FiskerGallery */,
 				A7A3DEED2678DECB004CA150 /* FiskerGalleryTests */,
+				A7A3DF24267933D6004CA150 /* FiskerGalleryiOS */,
 				A7A3DEE12678DECB004CA150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +110,7 @@
 			children = (
 				A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */,
 				A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */,
+				A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +193,20 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A7A3DF24267933D6004CA150 /* FiskerGalleryiOS */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DF25267933D6004CA150 /* AppDelegate.swift */,
+				A7A3DF27267933D6004CA150 /* SceneDelegate.swift */,
+				A7A3DF29267933D6004CA150 /* ViewController.swift */,
+				A7A3DF2B267933D6004CA150 /* Main.storyboard */,
+				A7A3DF2E267933DB004CA150 /* Assets.xcassets */,
+				A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */,
+				A7A3DF33267933DB004CA150 /* Info.plist */,
+			);
+			path = FiskerGalleryiOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -219,6 +256,23 @@
 			productReference = A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A7A3DF22267933D6004CA150 /* FiskerGalleryiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7A3DF34267933DB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOS" */;
+			buildPhases = (
+				A7A3DF1F267933D6004CA150 /* Sources */,
+				A7A3DF20267933D6004CA150 /* Frameworks */,
+				A7A3DF21267933D6004CA150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FiskerGalleryiOS;
+			productName = FiskerGalleryiOS;
+			productReference = A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,6 +289,9 @@
 					A7A3DEE82678DECB004CA150 = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
+					};
+					A7A3DF22267933D6004CA150 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -253,6 +310,7 @@
 			targets = (
 				A7A3DEDF2678DECB004CA150 /* FiskerGallery */,
 				A7A3DEE82678DECB004CA150 /* FiskerGalleryTests */,
+				A7A3DF22267933D6004CA150 /* FiskerGalleryiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +327,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7A3DF21267933D6004CA150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */,
+				A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */,
+				A7A3DF2D267933D6004CA150 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +371,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7A3DF1F267933D6004CA150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7A3DF2A267933D6004CA150 /* ViewController.swift in Sources */,
+				A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */,
+				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -312,6 +390,25 @@
 			targetProxy = A7A3DEEB2678DECB004CA150 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7A3DF2B267933D6004CA150 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7A3DF2C267933D6004CA150 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7A3DF31267933DB004CA150 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A7A3DEF22678DECB004CA150 /* Debug */ = {
@@ -534,6 +631,44 @@
 			};
 			name = Release;
 		};
+		A7A3DF35267933DB004CA150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FiskerGalleryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7A3DF36267933DB004CA150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FiskerGalleryiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,6 +695,15 @@
 			buildConfigurations = (
 				A7A3DEF82678DECB004CA150 /* Debug */,
 				A7A3DEF92678DECB004CA150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7A3DF34267933DB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7A3DF35267933DB004CA150 /* Debug */,
+				A7A3DF36267933DB004CA150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
