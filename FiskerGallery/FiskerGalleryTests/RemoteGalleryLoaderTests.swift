@@ -13,7 +13,7 @@ protocol GalleryLoader {
     func load(completion: @escaping (Result) -> Void)
 }
 
-struct GalleryItem {
+struct GalleryItem: Equatable {
     let id: UUID
     let author: String
     let url: URL
@@ -34,10 +34,20 @@ struct RemoteGalleryLoader: GalleryLoader {
         self.client = client
     }
     
+    public enum Error: Swift.Error {
+        case connectionError
+        case invalidData
+    }
+    
     func load(completion: @escaping (GalleryLoader.Result) -> Void) {
         client.get(url: url, completion: { result in
             switch result {
-            case .success: break
+            case let .success((_, response)):
+                if response.statusCode == 200 {
+                    completion(.success([]))
+                } else {
+                    completion(.failure(Error.invalidData))
+                }
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -91,12 +101,54 @@ class RemoteGalleryLoaderTests: XCTestCase {
         
         wait(for: [expect], timeout: 1)
     }
+    
+    func test_load_responseErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+        
+        let sample = [199, 201, 300, 400, 500]
+        sample.enumerated().forEach({ index, code in
+            expect(sut, toCompleteWith: .failure(RemoteGalleryLoader.Error.invalidData)) {
+                let json = makeJSONItems([])
+                client.complete(withStatusCode: code, data: json, at: index )
+            }
+        })
+    }
 
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGalleryLoader, spy: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteGalleryLoader(url: url, client: client)
         return (sut, client)
+    }
+    
+    private func expect(_ sut: RemoteGalleryLoader,
+                        toCompleteWith expectedResult: RemoteGalleryLoader.Result,
+                        when action: () -> Void,
+                        file: StaticString = #filePath, line: UInt = #line) {
+        
+        let expect = expectation(description: "wait for load completion")
+        
+        sut.load(completion: { receiveResult in
+            switch (receiveResult, expectedResult) {
+            case let (.success(receiveItems), .success(expectedItems)):
+                XCTAssertEqual(receiveItems, expectedItems, file: file, line: line)
+                
+            case let (.failure(receiveError as RemoteGalleryLoader.Error), .failure(expectedError as RemoteGalleryLoader.Error)):
+                XCTAssertEqual(receiveError, expectedError, file: file, line: line)
+                
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receiveResult) instead", file: file, line: line)
+            }
+            expect.fulfill()
+        })
+        
+        action()
+        wait(for: [expect], timeout: 1)
+    }
+    
+    private func makeJSONItems(_ items: [[String : Any]]) -> Data {
+        let json = ["array": items]
+        return try! JSONSerialization.data(withJSONObject: json)
     }
     
     class HTTPClientSpy: HTTPClient {
@@ -112,6 +164,11 @@ class RemoteGalleryLoaderTests: XCTestCase {
         
         func complete(with error: Error, index: Int = 0) {
             messages[index].completion(.failure(error))
+        }
+        
+        func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
+            let response = HTTPURLResponse(url: requestUrls[index], statusCode: code, httpVersion: nil, headerFields: nil)!
+            messages[index].completion(.success((data, response)))
         }
     }
 }
