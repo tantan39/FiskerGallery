@@ -16,6 +16,7 @@
 		A7A3DF092678FDDA004CA150 /* GalleryItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */; };
 		A7A3DF0B2678FE08004CA150 /* RemoteGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */; };
 		A7A3DF0D267902EE004CA150 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */; };
+		A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemsMapper.swift; sourceTree = "<group>"; };
 		A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryItem.swift; sourceTree = "<group>"; };
 		A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				A7A3DEF02678DECB004CA150 /* Info.plist */,
 				A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */,
+				A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */,
 			);
 			path = FiskerGalleryTests;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */,
 				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
