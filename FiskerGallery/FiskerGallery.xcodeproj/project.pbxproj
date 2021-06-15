@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81CF1D26EA3CC0BBDBA59579 /* Pods_FiskerGalleryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0496B5CC65B9719BD9BF7EE /* Pods_FiskerGalleryiOS.framework */; };
 		A7A3DEEA2678DECB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */; };
 		A7A3DF002678FC3E004CA150 /* GalleryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFF2678FC3E004CA150 /* GalleryLoader.swift */; };
@@ -31,6 +32,9 @@
 		A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 		A7A3DF4A2679408E004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DF4B2679408E004CA150 /* FiskerGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D070236AD9832CB1E58DF412 /* Pods_FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0BDB86800EA99314F808F4 /* Pods_FiskerGallery.framework */; };
+		D82BE4BEC4B6F0BD5A3DD054 /* Pods_FiskerGallery_FiskerGalleryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A971F849AD42539C5CB2AFB7 /* Pods_FiskerGallery_FiskerGalleryTests.framework */; };
+		E0731CA91108E85BA12EF6A1 /* Pods_FiskerGalleryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E41DE900C004467EAD5492 /* Pods_FiskerGalleryiOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +76,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01FCF75D71F61C064F5AC816 /* Pods-FiskerGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGallery.release.xcconfig"; path = "Target Support Files/Pods-FiskerGallery/Pods-FiskerGallery.release.xcconfig"; sourceTree = "<group>"; };
+		0546622B65E1EB22B40D9DE6 /* Pods-FiskerGalleryiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOS.release.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS.release.xcconfig"; sourceTree = "<group>"; };
+		06B9AE9A62A8E45DDD1B8CC8 /* Pods-FiskerGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGallery.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGallery/Pods-FiskerGallery.debug.xcconfig"; sourceTree = "<group>"; };
+		0C0BDB86800EA99314F808F4 /* Pods_FiskerGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiskerGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB142AE7E09EE663B2D6CCC /* Pods-FiskerGallery-FiskerGalleryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGallery-FiskerGalleryTests.release.xcconfig"; path = "Target Support Files/Pods-FiskerGallery-FiskerGalleryTests/Pods-FiskerGallery-FiskerGalleryTests.release.xcconfig"; sourceTree = "<group>"; };
+		20E41DE900C004467EAD5492 /* Pods_FiskerGalleryiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiskerGalleryiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E3AD71D28DC62B536D0A691 /* Pods-FiskerGalleryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOS.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskerGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEE42678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +111,9 @@
 		A7A3DF33267933DB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DF3B267934FB004CA150 /* FiskerGalleryiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DF3F267934FB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A971F849AD42539C5CB2AFB7 /* Pods_FiskerGallery_FiskerGalleryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiskerGallery_FiskerGalleryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1141A2C8DEC0FC3354BB02 /* Pods-FiskerGallery-FiskerGalleryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGallery-FiskerGalleryTests.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGallery-FiskerGalleryTests/Pods-FiskerGallery-FiskerGalleryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0496B5CC65B9719BD9BF7EE /* Pods_FiskerGalleryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FiskerGalleryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D070236AD9832CB1E58DF412 /* Pods_FiskerGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A3DEEA2678DECB004CA150 /* FiskerGallery.framework in Frameworks */,
+				D82BE4BEC4B6F0BD5A3DD054 /* Pods_FiskerGallery_FiskerGalleryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A3DF4A2679408E004CA150 /* FiskerGallery.framework in Frameworks */,
+				81CF1D26EA3CC0BBDBA59579 /* Pods_FiskerGalleryiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,12 +148,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A3DF40267934FB004CA150 /* FiskerGallery.framework in Frameworks */,
+				E0731CA91108E85BA12EF6A1 /* Pods_FiskerGalleryiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DF2129156AE7E4EA2EF606F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06B9AE9A62A8E45DDD1B8CC8 /* Pods-FiskerGallery.debug.xcconfig */,
+				01FCF75D71F61C064F5AC816 /* Pods-FiskerGallery.release.xcconfig */,
+				AA1141A2C8DEC0FC3354BB02 /* Pods-FiskerGallery-FiskerGalleryTests.debug.xcconfig */,
+				1AB142AE7E09EE663B2D6CCC /* Pods-FiskerGallery-FiskerGalleryTests.release.xcconfig */,
+				8E3AD71D28DC62B536D0A691 /* Pods-FiskerGalleryiOS.debug.xcconfig */,
+				0546622B65E1EB22B40D9DE6 /* Pods-FiskerGalleryiOS.release.xcconfig */,
+				81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */,
+				A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A7A3DED62678DECB004CA150 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +180,7 @@
 				A7A3DF3C267934FB004CA150 /* FiskerGalleryiOSTests */,
 				A7A3DEE12678DECB004CA150 /* Products */,
 				A7A3DF492679408E004CA150 /* Frameworks */,
+				4DF2129156AE7E4EA2EF606F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +296,10 @@
 		A7A3DF492679408E004CA150 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C0BDB86800EA99314F808F4 /* Pods_FiskerGallery.framework */,
+				A971F849AD42539C5CB2AFB7 /* Pods_FiskerGallery_FiskerGalleryTests.framework */,
+				B0496B5CC65B9719BD9BF7EE /* Pods_FiskerGalleryiOS.framework */,
+				20E41DE900C004467EAD5492 /* Pods_FiskerGalleryiOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,6 +321,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A3DEF42678DECB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGallery" */;
 			buildPhases = (
+				096B29C77CB6744F2D6FC75E /* [CP] Check Pods Manifest.lock */,
 				A7A3DEDB2678DECB004CA150 /* Headers */,
 				A7A3DEDC2678DECB004CA150 /* Sources */,
 				A7A3DEDD2678DECB004CA150 /* Frameworks */,
@@ -298,6 +340,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A3DEF72678DECB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryTests" */;
 			buildPhases = (
+				B4E1DC8E9EEC9B8D783A375A /* [CP] Check Pods Manifest.lock */,
 				A7A3DEE52678DECB004CA150 /* Sources */,
 				A7A3DEE62678DECB004CA150 /* Frameworks */,
 				A7A3DEE72678DECB004CA150 /* Resources */,
@@ -316,10 +359,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A3DF34267933DB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOS" */;
 			buildPhases = (
+				6DB1954A05D9FCAA643118AE /* [CP] Check Pods Manifest.lock */,
 				A7A3DF1F267933D6004CA150 /* Sources */,
 				A7A3DF20267933D6004CA150 /* Frameworks */,
 				A7A3DF21267933D6004CA150 /* Resources */,
 				A7A3DF4E2679408E004CA150 /* Embed Frameworks */,
+				3258AC7E7DD7E41EA675C3D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +380,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7A3DF43267934FB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOSTests" */;
 			buildPhases = (
+				3016EF34F2E8EB5A43298EEF /* [CP] Check Pods Manifest.lock */,
 				A7A3DF37267934FB004CA150 /* Sources */,
 				A7A3DF38267934FB004CA150 /* Frameworks */,
 				A7A3DF39267934FB004CA150 /* Resources */,
@@ -427,6 +473,114 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		096B29C77CB6744F2D6FC75E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FiskerGallery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3016EF34F2E8EB5A43298EEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FiskerGalleryiOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3258AC7E7DD7E41EA675C3D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB1954A05D9FCAA643118AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FiskerGalleryiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E1DC8E9EEC9B8D783A375A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FiskerGallery-FiskerGalleryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7A3DEDC2678DECB004CA150 /* Sources */ = {
@@ -631,6 +785,7 @@
 		};
 		A7A3DEF52678DECB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06B9AE9A62A8E45DDD1B8CC8 /* Pods-FiskerGallery.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -657,6 +812,7 @@
 		};
 		A7A3DEF62678DECB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01FCF75D71F61C064F5AC816 /* Pods-FiskerGallery.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +838,7 @@
 		};
 		A7A3DEF82678DECB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA1141A2C8DEC0FC3354BB02 /* Pods-FiskerGallery-FiskerGalleryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -708,6 +865,7 @@
 		};
 		A7A3DEF92678DECB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB142AE7E09EE663B2D6CCC /* Pods-FiskerGallery-FiskerGalleryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -729,6 +887,7 @@
 		};
 		A7A3DF35267933DB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3AD71D28DC62B536D0A691 /* Pods-FiskerGalleryiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -748,6 +907,7 @@
 		};
 		A7A3DF36267933DB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0546622B65E1EB22B40D9DE6 /* Pods-FiskerGalleryiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -767,6 +927,7 @@
 		};
 		A7A3DF44267934FB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FiskerGalleryiOSTests/Info.plist;
@@ -785,6 +946,7 @@
 		};
 		A7A3DF45267934FB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FiskerGalleryiOSTests/Info.plist;
