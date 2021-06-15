@@ -15,6 +15,7 @@
 		A7A3DF072678FDC7004CA150 /* RemoteGalleryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF062678FDC7004CA150 /* RemoteGalleryLoader.swift */; };
 		A7A3DF092678FDDA004CA150 /* GalleryItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */; };
 		A7A3DF0B2678FE08004CA150 /* RemoteGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */; };
+		A7A3DF0D267902EE004CA150 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		A7A3DF062678FDC7004CA150 /* RemoteGalleryLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryLoader.swift; sourceTree = "<group>"; };
 		A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemsMapper.swift; sourceTree = "<group>"; };
 		A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryItem.swift; sourceTree = "<group>"; };
+		A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DF042678FDA3004CA150 /* HTTPClient.swift */,
+				A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */,
 				A7A3DF062678FDC7004CA150 /* RemoteGalleryLoader.swift */,
 				A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */,
 				A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DF0D267902EE004CA150 /* URLSessionHTTPClient.swift in Sources */,
 				A7A3DF002678FC3E004CA150 /* GalleryLoader.swift in Sources */,
 				A7A3DF0B2678FE08004CA150 /* RemoteGalleryItem.swift in Sources */,
 				A7A3DF022678FD2E004CA150 /* GalleryItem.swift in Sources */,
