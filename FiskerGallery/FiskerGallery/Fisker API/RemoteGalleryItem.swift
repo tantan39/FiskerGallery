@@ -8,7 +8,7 @@
 import Foundation
 
 struct RemoteGalleryItem: Decodable {
-    internal let id: UUID
+    internal let id: String
     internal let author: String
-    internal let url: URL
+    internal let url: String
 }

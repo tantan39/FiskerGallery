@@ -19,7 +19,7 @@ public class GalleryViewModel {
     func fetchGallery() {
         self.loader?.load(completion: { [weak self] result in
             guard let self = self else { return }
-            if let items = try? result.get() {
+            if let items = try? result.get() { 
                 self.items = items
             }
         })

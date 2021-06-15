@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct RemoteGalleryLoader: GalleryLoader {
+public class RemoteGalleryLoader: GalleryLoader {
     let url: URL
     let client: HTTPClient
     
-    public init(url: URL, client: HTTPClient) {
+    public init(url: URL, client: HTTPClient = URLSessionHTTPClient()) {
         self.url = url
         self.client = client
     }
@@ -46,6 +46,6 @@ public struct RemoteGalleryLoader: GalleryLoader {
 
 private extension Array where Element == RemoteGalleryItem {
     func toModels() -> [GalleryItem] {
-        return map({ GalleryItem(id: $0.id, author: $0.author, url: $0.url) })
+        return map({ GalleryItem(id: UUID(uuidString: $0.id) ?? .init(), author: $0.author, url: $0.url) })
     }
 }

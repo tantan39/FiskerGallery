@@ -23,6 +23,9 @@ public class GalleryViewController: UICollectionViewController {
     }
     
     public override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        
         self.viewModel?.fetchGallery()
         
         self.viewModel?.$items.sink(receiveValue: { [weak self] item in
@@ -39,7 +42,7 @@ public class GalleryViewController: UICollectionViewController {
         let item = self.viewModel?.items[indexPath.row]
         let cell = GalleryItemCell()
         cell.authorLabel.text = item?.author
-        cell.urlLabel.text = item?.url.absoluteString
+        cell.urlLabel.text = item?.url
         return cell
     }
 }

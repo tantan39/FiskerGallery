@@ -23,14 +23,14 @@
 		A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 		A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF25267933D6004CA150 /* AppDelegate.swift */; };
 		A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF27267933D6004CA150 /* SceneDelegate.swift */; };
-		A7A3DF2A267933D6004CA150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF29267933D6004CA150 /* ViewController.swift */; };
-		A7A3DF2D267933D6004CA150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2B267933D6004CA150 /* Main.storyboard */; };
 		A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2E267933DB004CA150 /* Assets.xcassets */; };
 		A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */; };
 		A7A3DF40267934FB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DF462679354B004CA150 /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */; };
 		A7A3DF47267935C6004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
 		A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
+		A7A3DF4A2679408E004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
+		A7A3DF4B2679408E004CA150 /* FiskerGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,28 @@
 			remoteGlobalIDString = A7A3DEDF2678DECB004CA150;
 			remoteInfo = FiskerGallery;
 		};
+		A7A3DF4C2679408E004CA150 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7A3DED72678DECB004CA150 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7A3DEDF2678DECB004CA150;
+			remoteInfo = FiskerGallery;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7A3DF4E2679408E004CA150 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A7A3DF4B2679408E004CA150 /* FiskerGallery.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskerGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +93,6 @@
 		A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiskerGalleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DF25267933D6004CA150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A3DF27267933D6004CA150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7A3DF29267933D6004CA150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A7A3DF2C267933D6004CA150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7A3DF2E267933DB004CA150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7A3DF31267933DB004CA150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A3DF33267933DB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DF4A2679408E004CA150 /* FiskerGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +143,7 @@
 				A7A3DF24267933D6004CA150 /* FiskerGalleryiOS */,
 				A7A3DF3C267934FB004CA150 /* FiskerGalleryiOSTests */,
 				A7A3DEE12678DECB004CA150 /* Products */,
+				A7A3DF492679408E004CA150 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,8 +239,6 @@
 				A7A3DF25267933D6004CA150 /* AppDelegate.swift */,
 				A7A3DF27267933D6004CA150 /* SceneDelegate.swift */,
 				A7A3DF0E2679032C004CA150 /* Fisker UI */,
-				A7A3DF29267933D6004CA150 /* ViewController.swift */,
-				A7A3DF2B267933D6004CA150 /* Main.storyboard */,
 				A7A3DF2E267933DB004CA150 /* Assets.xcassets */,
 				A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */,
 				A7A3DF33267933DB004CA150 /* Info.plist */,
@@ -235,6 +254,13 @@
 				A7A3DF3F267934FB004CA150 /* Info.plist */,
 			);
 			path = FiskerGalleryiOSTests;
+			sourceTree = "<group>";
+		};
+		A7A3DF492679408E004CA150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +319,12 @@
 				A7A3DF1F267933D6004CA150 /* Sources */,
 				A7A3DF20267933D6004CA150 /* Frameworks */,
 				A7A3DF21267933D6004CA150 /* Resources */,
+				A7A3DF4E2679408E004CA150 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A7A3DF4D2679408E004CA150 /* PBXTargetDependency */,
 			);
 			name = FiskerGalleryiOS;
 			productName = FiskerGalleryiOS;
@@ -388,7 +416,6 @@
 			files = (
 				A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */,
 				A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */,
-				A7A3DF2D267933D6004CA150 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +460,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A3DF2A267933D6004CA150 /* ViewController.swift in Sources */,
 				A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */,
 				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
 			);
@@ -462,17 +488,14 @@
 			target = A7A3DEDF2678DECB004CA150 /* FiskerGallery */;
 			targetProxy = A7A3DF41267934FB004CA150 /* PBXContainerItemProxy */;
 		};
+		A7A3DF4D2679408E004CA150 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7A3DEDF2678DECB004CA150 /* FiskerGallery */;
+			targetProxy = A7A3DF4C2679408E004CA150 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7A3DF2B267933D6004CA150 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7A3DF2C267933D6004CA150 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
