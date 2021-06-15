@@ -7,13 +7,6 @@
 
 import XCTest
 import FiskerGallery
-import Combine
-
-class GalleryItemCell: UICollectionViewCell {
-    public let authorLabel = UILabel()
-    public let imageView = UIImageView()
-    public let urlLabel = UILabel()
-}
 
 extension GalleryItemCell {
     var authorText: String {
@@ -22,61 +15,6 @@ extension GalleryItemCell {
     
     var urlText: String {
         return urlLabel.text ?? ""
-    }
-}
-
-class GalleryViewModel {
-    private(set) var loader: GalleryLoader?
-    
-    @Published var items = [GalleryItem]()
-
-    init(loader: GalleryLoader) {
-        self.loader = loader
-    }
-    
-    func fetchGallery() {
-        self.loader?.load(completion: { [weak self] result in
-            guard let self = self else { return }
-            if let items = try? result.get() {
-                self.items = items
-            }
-        })
-    }
-}
-
-class GalleryViewController: UICollectionViewController {
-    var viewModel: GalleryViewModel?
-    private var cancellables = Set<AnyCancellable>()
-    
-    init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewLayout(), viewModel: GalleryViewModel) {
-        super.init(collectionViewLayout: layout)
-        
-        self.viewModel = viewModel
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        self.viewModel?.fetchGallery()
-        
-        self.viewModel?.$items.sink(receiveValue: { [weak self] item in
-            guard let self = self else { return }
-            self.collectionView.reloadData()
-        }).store(in: &cancellables)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel?.items.count ?? 0
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = self.viewModel?.items[indexPath.row]
-        let cell = GalleryItemCell()
-        cell.authorLabel.text = item?.author
-        cell.urlLabel.text = item?.url.absoluteString
-        return cell
     }
 }
 
