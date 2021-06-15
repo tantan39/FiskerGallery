@@ -84,7 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEE42678DECB004CA150 /* Info.plist */,
-				A7A3DF032678FD5C004CA150 /* FeedAPI */,
+				A7A3DF0E2679032C004CA150 /* Fisker UI */,
+				A7A3DF032678FD5C004CA150 /* Fisker API */,
 				A7A3DEFE2678FBE9004CA150 /* Fisker Feature */,
 			);
 			path = FiskerGallery;
@@ -108,7 +109,7 @@
 			path = "Fisker Feature";
 			sourceTree = "<group>";
 		};
-		A7A3DF032678FD5C004CA150 /* FeedAPI */ = {
+		A7A3DF032678FD5C004CA150 /* Fisker API */ = {
 			isa = PBXGroup;
 			children = (
 				A7A3DF042678FDA3004CA150 /* HTTPClient.swift */,
@@ -117,7 +118,14 @@
 				A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */,
 				A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */,
 			);
-			path = FeedAPI;
+			path = "Fisker API";
+			sourceTree = "<group>";
+		};
+		A7A3DF0E2679032C004CA150 /* Fisker UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Fisker UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
