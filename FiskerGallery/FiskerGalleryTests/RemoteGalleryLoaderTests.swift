@@ -8,9 +8,9 @@
 import XCTest
 
 protocol GalleryLoader {
-    typealias Result = Result<[GalleryItem], Error>
+    typealias Result = Swift.Result<[GalleryItem], Error>
     
-    func load(completion: (Result) -> Void)
+    func load(completion: @escaping (Result) -> Void)
 }
 
 struct GalleryItem {
@@ -19,6 +19,21 @@ struct GalleryItem {
     let url: URL
 }
 
-class RemoteGalleryLoaderTests: XCTestCase {
+protocol HTTPClient {
+    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
     
+    func get(url: URL, completion: @escaping (Result) -> Void)
+}
+
+struct RemoteGalleryLoader: GalleryLoader {
+    let url: URL
+    let client: HTTPClient
+    
+    func load(completion: (GalleryLoader.Result) -> Void) {
+        
+    }
+}
+
+class RemoteGalleryLoaderTests: XCTestCase {
+
 }
