@@ -42,8 +42,8 @@ struct RemoteGalleryLoader: GalleryLoader {
     func load(completion: @escaping (GalleryLoader.Result) -> Void) {
         client.get(url: url, completion: { result in
             switch result {
-            case let .success((_, response)):
-                if response.statusCode == 200 {
+            case let .success((data, response)):
+                if response.statusCode == 200, let _ = try? JSONDecoder().decode(Root.self, from: data) {
                     completion(.success([]))
                 } else {
                     completion(.failure(Error.invalidData))
@@ -53,6 +53,10 @@ struct RemoteGalleryLoader: GalleryLoader {
             }
         })
     }
+}
+
+private struct Root: Decodable {
+    
 }
 
 class RemoteGalleryLoaderTests: XCTestCase {
@@ -112,6 +116,15 @@ class RemoteGalleryLoaderTests: XCTestCase {
                 client.complete(withStatusCode: code, data: json, at: index )
             }
         })
+    }
+    
+    func test_load_responseErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(RemoteGalleryLoader.Error.invalidData)) {
+            let data = "invalid json data".data(using: .utf8)!
+            client.complete(withStatusCode: 200, data: data )
+        }
     }
 
     // MARK: - Helpers
