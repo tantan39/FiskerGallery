@@ -6,18 +6,7 @@
 //
 
 import XCTest
-
-protocol GalleryLoader {
-    typealias Result = Swift.Result<[GalleryItem], Error>
-    
-    func load(completion: @escaping (Result) -> Void)
-}
-
-struct GalleryItem: Equatable {
-    let id: UUID
-    let author: String
-    let url: URL
-}
+import FiskerGallery
 
 protocol HTTPClient {
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>

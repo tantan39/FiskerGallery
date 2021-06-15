@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A7A3DEEA2678DECB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */; };
+		A7A3DF002678FC3E004CA150 /* GalleryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFF2678FC3E004CA150 /* GalleryLoader.swift */; };
+		A7A3DF022678FD2E004CA150 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF012678FD2E004CA150 /* GalleryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEF02678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryLoaderTests.swift; sourceTree = "<group>"; };
+		A7A3DEFF2678FC3E004CA150 /* GalleryLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryLoader.swift; sourceTree = "<group>"; };
+		A7A3DF012678FD2E004CA150 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEE42678DECB004CA150 /* Info.plist */,
+				A7A3DF032678FD5C004CA150 /* FeedAPI */,
+				A7A3DEFE2678FBE9004CA150 /* Fisker Feature */,
 			);
 			path = FiskerGallery;
 			sourceTree = "<group>";
@@ -81,6 +87,22 @@
 				A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */,
 			);
 			path = FiskerGalleryTests;
+			sourceTree = "<group>";
+		};
+		A7A3DEFE2678FBE9004CA150 /* Fisker Feature */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DEFF2678FC3E004CA150 /* GalleryLoader.swift */,
+				A7A3DF012678FD2E004CA150 /* GalleryItem.swift */,
+			);
+			path = "Fisker Feature";
+			sourceTree = "<group>";
+		};
+		A7A3DF032678FD5C004CA150 /* FeedAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeedAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +165,7 @@
 				TargetAttributes = {
 					A7A3DEDF2678DECB004CA150 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					A7A3DEE82678DECB004CA150 = {
 						CreatedOnToolsVersion = 12.5;
@@ -191,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DF002678FC3E004CA150 /* GalleryLoader.swift in Sources */,
+				A7A3DF022678FD2E004CA150 /* GalleryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +363,7 @@
 		A7A3DEF52678DECB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -354,6 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGallery;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -362,6 +389,7 @@
 		A7A3DEF62678DECB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -386,6 +414,7 @@
 		A7A3DEF82678DECB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -411,6 +440,7 @@
 		A7A3DEF92678DECB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FL29S3YYFY;
