@@ -111,7 +111,6 @@ class GalleryViewControllerTests: XCTestCase {
         let image0 = makeItem(author: "a author")
         let image1 = makeItem(author: "another author")
 
-        let gallery = [image0, image1]
         let loader = LoaderSpy()
         let sut = GalleryViewController(viewModel: GalleryViewModel(loader: loader))
         
@@ -120,10 +119,7 @@ class GalleryViewControllerTests: XCTestCase {
         
         loader.completeGalleryLoading(with: [image0, image1], at: 0)
         assertThat(sut, isRendering: [image0, image1])
-        
-        gallery.enumerated().forEach({ index, image in
-            assertThat(sut, hasViewConfiguredFor: image, at: index)
-        })
+    
     }
     
     // MARK: - Helpers
@@ -131,10 +127,14 @@ class GalleryViewControllerTests: XCTestCase {
         return GalleryItem(id: UUID(), author: author, url: url)
     }
     
-    func assertThat(_ sut: GalleryViewController, isRendering feed: [GalleryItem], file: StaticString = #filePath, line: UInt = #line) {
-        guard sut.numberOfRenderedGalleryImageViews() == feed.count else {
-            return XCTFail("Expected \(feed.count) images, got \(sut.numberOfRenderedGalleryImageViews()) instead.", file: file, line: line)
+    func assertThat(_ sut: GalleryViewController, isRendering gallery: [GalleryItem], file: StaticString = #filePath, line: UInt = #line) {
+        guard sut.numberOfRenderedGalleryImageViews() == gallery.count else {
+            return XCTFail("Expected \(gallery.count) images, got \(sut.numberOfRenderedGalleryImageViews()) instead.", file: file, line: line)
         }
+        
+        gallery.enumerated().forEach({ index, image in
+            assertThat(sut, hasViewConfiguredFor: image, at: index)
+        })
     }
     
     func assertThat(_ sut: GalleryViewController, hasViewConfiguredFor item: GalleryItem, at index: Int, file: StaticString = #filePath, line: UInt = #line) {
