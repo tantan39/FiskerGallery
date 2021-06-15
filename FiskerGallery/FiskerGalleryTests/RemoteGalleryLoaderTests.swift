@@ -35,5 +35,25 @@ struct RemoteGalleryLoader: GalleryLoader {
 }
 
 class RemoteGalleryLoaderTests: XCTestCase {
+    
+    func test_init_withoutRequest() {
+        let client = HTTPClientSpy()
+        let url = URL(string: "https://a-url.com")!
+        _ = RemoteGalleryLoader(url: url, client: client)
+        
+        XCTAssertEqual(client.requestUrls, [])
+    }
+    
+    // MARK: - Helpers
+    class HTTPClientSpy: HTTPClient {
+        private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+        
+        var requestUrls: [URL] {
+            return messages.map({ $0.url })
+        }
+        
+        func get(url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
 
+        }
+    }
 }
