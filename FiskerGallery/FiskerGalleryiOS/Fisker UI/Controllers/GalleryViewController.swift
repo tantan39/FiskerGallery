@@ -24,13 +24,14 @@ public class GalleryViewController: UICollectionViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        
+        self.collectionView.backgroundColor = .white
         self.viewModel?.fetchGallery()
         
         self.viewModel?.$items.sink(receiveValue: { [weak self] item in
             guard let self = self else { return }
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }).store(in: &cancellables)
     }
     

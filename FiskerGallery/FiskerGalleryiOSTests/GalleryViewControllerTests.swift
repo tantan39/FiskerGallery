@@ -36,7 +36,7 @@ class GalleryViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     func makeItem(author: String, url: URL = URL(string: "http://any-url.com")!) -> GalleryItem {
-        return GalleryItem(id: UUID(), author: author, url: url)
+        return GalleryItem(id: UUID(), author: author, url: url.absoluteString)
     }
     
     func assertThat(_ sut: GalleryViewController, isRendering gallery: [GalleryItem], file: StaticString = #filePath, line: UInt = #line) {
@@ -58,7 +58,7 @@ class GalleryViewControllerTests: XCTestCase {
                 
         XCTAssertEqual(cell.authorText, item.author, "Expected location text to be \(String(describing: item.author)) for image  view at index (\(index))", file: file, line: line)
         
-        XCTAssertEqual(cell.urlText, item.url.absoluteString, "Expected location text to be \(String(describing: item.url)) for image  view at index (\(index))", file: file, line: line)
+        XCTAssertEqual(cell.urlText, item.url, "Expected location text to be \(String(describing: item.url)) for image  view at index (\(index))", file: file, line: line)
     }
 
 }
