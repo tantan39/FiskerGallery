@@ -34,8 +34,14 @@ struct RemoteGalleryLoader: GalleryLoader {
         self.client = client
     }
     
-    func load(completion: (GalleryLoader.Result) -> Void) {
-        client.get(url: url, completion: { _ in })
+    func load(completion: @escaping (GalleryLoader.Result) -> Void) {
+        client.get(url: url, completion: { result in
+            switch result {
+            case .success: break
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        })
     }
 }
 
@@ -65,6 +71,27 @@ class RemoteGalleryLoaderTests: XCTestCase {
         XCTAssertEqual(client.requestUrls, [url, url])
     }
     
+    func test_load_responseError() {
+        let (sut, client) = makeSUT()
+        
+        let expect = expectation(description: "wait for load completion")
+        let clientError = NSError(domain: "Test", code: 0)
+        sut.load(completion: { result in
+            switch result {
+            case .success(_):
+                break
+            case let .failure(error):
+                XCTAssertEqual(error as NSError, clientError)
+            }
+            
+            expect.fulfill()
+        })
+        
+        client.complete(with: clientError)
+        
+        wait(for: [expect], timeout: 1)
+    }
+
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGalleryLoader, spy: HTTPClientSpy) {
         let client = HTTPClientSpy()
@@ -81,6 +108,10 @@ class RemoteGalleryLoaderTests: XCTestCase {
         
         func get(url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
             messages.append((url, completion))
+        }
+        
+        func complete(with error: Error, index: Int = 0) {
+            messages[index].completion(.failure(error))
         }
     }
 }
