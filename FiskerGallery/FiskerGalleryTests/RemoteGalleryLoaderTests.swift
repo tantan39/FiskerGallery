@@ -43,20 +43,49 @@ struct RemoteGalleryLoader: GalleryLoader {
         client.get(url: url, completion: { result in
             switch result {
             case let .success((data, response)):
-                if response.statusCode == 200, let _ = try? JSONDecoder().decode(Root.self, from: data) {
-                    completion(.success([]))
-                } else {
-                    completion(.failure(Error.invalidData))
-                }
+                completion(RemoteGalleryLoader.map(data, from: response))
+                
             case let .failure(error):
                 completion(.failure(error))
             }
         })
     }
+    
+    private static func map(_ data: Data, from response: HTTPURLResponse) -> GalleryLoader.Result {
+        do {
+            let items = try GalleryItemsMapper.map(data, response: response)
+            return .success(items.toModels())
+        } catch {
+            return .failure(error)
+        }
+    }
+
 }
 
-private struct Root: Decodable {
+private extension Array where Element == RemoteGalleryItem {
+    func toModels() -> [GalleryItem] {
+        return map({ GalleryItem(id: $0.id, author: $0.author, url: $0.url) })
+    }
+}
+
+final class GalleryItemsMapper {
+    private struct Root: Decodable {
+        var array: [RemoteGalleryItem]
+    }
     
+    static func map(_ data: Data, response: HTTPURLResponse) throws -> [RemoteGalleryItem] {
+        guard response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
+             throw RemoteGalleryLoader.Error.invalidData
+        }
+        
+        return root.array
+    }
+}
+
+struct RemoteGalleryItem: Decodable {
+    internal let id: UUID
+    internal let author: String
+    internal let url: URL
 }
 
 class RemoteGalleryLoaderTests: XCTestCase {
@@ -126,6 +155,22 @@ class RemoteGalleryLoaderTests: XCTestCase {
             client.complete(withStatusCode: 200, data: data )
         }
     }
+    
+    func test_load_deliversListItemOn200HTTPResponseWithJSONList() {
+        let (sut, client) = makeSUT()
+                
+        let item1 = makeItem(id: UUID(), author: "author", url: URL(string: "https://a-url.com")!)
+        
+        let item2 = makeItem(id: UUID(), author: "another author", url: URL(string: "https://a-url.com")!)
+        
+        let items = [item1.model, item2.model]
+        
+        expect(sut, toCompleteWith: .success(items)) {
+            let json = makeJSONItems([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: json)
+        }
+        
+    }
 
     // MARK: - Helpers
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGalleryLoader, spy: HTTPClientSpy) {
@@ -162,6 +207,17 @@ class RemoteGalleryLoaderTests: XCTestCase {
     private func makeJSONItems(_ items: [[String : Any]]) -> Data {
         let json = ["array": items]
         return try! JSONSerialization.data(withJSONObject: json)
+    }
+    
+    private func makeItem(id: UUID, author: String, url: URL) -> (model: GalleryItem, json: [String: Any])  {
+        let item = GalleryItem(id: id, author: author, url: url)
+        let json = [ "id": item.id.description,
+                          "author": item.author,
+                          "url": item.url.absoluteString
+        ]
+        .compactMapValues({ $0 })
+        
+        return (item, json)
     }
     
     class HTTPClientSpy: HTTPClient {
