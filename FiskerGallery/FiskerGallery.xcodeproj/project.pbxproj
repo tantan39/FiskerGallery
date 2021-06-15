@@ -16,7 +16,6 @@
 		A7A3DF092678FDDA004CA150 /* GalleryItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */; };
 		A7A3DF0B2678FE08004CA150 /* RemoteGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */; };
 		A7A3DF0D267902EE004CA150 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */; };
-		A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */; };
 		A7A3DF1226793089004CA150 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
 		A7A3DF15267930F3004CA150 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */; };
 		A7A3DF1826793131004CA150 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1726793131004CA150 /* GalleryItemCell.swift */; };
@@ -28,10 +27,21 @@
 		A7A3DF2D267933D6004CA150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2B267933D6004CA150 /* Main.storyboard */; };
 		A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2E267933DB004CA150 /* Assets.xcassets */; };
 		A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */; };
+		A7A3DF40267934FB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
+		A7A3DF462679354B004CA150 /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */; };
+		A7A3DF47267935C6004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
+		A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A7A3DEEB2678DECB004CA150 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7A3DED72678DECB004CA150 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7A3DEDF2678DECB004CA150;
+			remoteInfo = FiskerGallery;
+		};
+		A7A3DF41267934FB004CA150 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A7A3DED72678DECB004CA150 /* Project object */;
 			proxyType = 1;
@@ -67,6 +77,8 @@
 		A7A3DF2E267933DB004CA150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7A3DF31267933DB004CA150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7A3DF33267933DB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A3DF3B267934FB004CA150 /* FiskerGalleryiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7A3DF3F267934FB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7A3DF38267934FB004CA150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7A3DF40267934FB004CA150 /* FiskerGallery.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -101,6 +121,7 @@
 				A7A3DEE22678DECB004CA150 /* FiskerGallery */,
 				A7A3DEED2678DECB004CA150 /* FiskerGalleryTests */,
 				A7A3DF24267933D6004CA150 /* FiskerGalleryiOS */,
+				A7A3DF3C267934FB004CA150 /* FiskerGalleryiOSTests */,
 				A7A3DEE12678DECB004CA150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +132,7 @@
 				A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */,
 				A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */,
 				A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */,
+				A7A3DF3B267934FB004CA150 /* FiskerGalleryiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEE42678DECB004CA150 /* Info.plist */,
-				A7A3DF0E2679032C004CA150 /* Fisker UI */,
 				A7A3DF032678FD5C004CA150 /* Fisker API */,
 				A7A3DEFE2678FBE9004CA150 /* Fisker Feature */,
 			);
@@ -130,9 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEF02678DECB004CA150 /* Info.plist */,
-				A7A3DF1A26793201004CA150 /* Helpers */,
 				A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */,
-				A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */,
 			);
 			path = FiskerGalleryTests;
 			sourceTree = "<group>";
@@ -198,6 +217,7 @@
 			children = (
 				A7A3DF25267933D6004CA150 /* AppDelegate.swift */,
 				A7A3DF27267933D6004CA150 /* SceneDelegate.swift */,
+				A7A3DF0E2679032C004CA150 /* Fisker UI */,
 				A7A3DF29267933D6004CA150 /* ViewController.swift */,
 				A7A3DF2B267933D6004CA150 /* Main.storyboard */,
 				A7A3DF2E267933DB004CA150 /* Assets.xcassets */,
@@ -205,6 +225,16 @@
 				A7A3DF33267933DB004CA150 /* Info.plist */,
 			);
 			path = FiskerGalleryiOS;
+			sourceTree = "<group>";
+		};
+		A7A3DF3C267934FB004CA150 /* FiskerGalleryiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DF1A26793201004CA150 /* Helpers */,
+				A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */,
+				A7A3DF3F267934FB004CA150 /* Info.plist */,
+			);
+			path = FiskerGalleryiOSTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +303,24 @@
 			productReference = A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A7A3DF3A267934FB004CA150 /* FiskerGalleryiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7A3DF43267934FB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOSTests" */;
+			buildPhases = (
+				A7A3DF37267934FB004CA150 /* Sources */,
+				A7A3DF38267934FB004CA150 /* Frameworks */,
+				A7A3DF39267934FB004CA150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7A3DF42267934FB004CA150 /* PBXTargetDependency */,
+			);
+			name = FiskerGalleryiOSTests;
+			productName = FiskerGalleryiOSTests;
+			productReference = A7A3DF3B267934FB004CA150 /* FiskerGalleryiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -293,6 +341,9 @@
 					A7A3DF22267933D6004CA150 = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					A7A3DF3A267934FB004CA150 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = A7A3DEDA2678DECB004CA150 /* Build configuration list for PBXProject "FiskerGallery" */;
@@ -311,6 +362,7 @@
 				A7A3DEDF2678DECB004CA150 /* FiskerGallery */,
 				A7A3DEE82678DECB004CA150 /* FiskerGalleryTests */,
 				A7A3DF22267933D6004CA150 /* FiskerGalleryiOS */,
+				A7A3DF3A267934FB004CA150 /* FiskerGalleryiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,6 +392,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7A3DF39267934FB004CA150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -364,7 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */,
 				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
 				A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
 				A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */,
@@ -381,6 +439,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A7A3DF37267934FB004CA150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */,
+				A7A3DF462679354B004CA150 /* GalleryViewControllerTests.swift in Sources */,
+				A7A3DF47267935C6004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -388,6 +456,11 @@
 			isa = PBXTargetDependency;
 			target = A7A3DEDF2678DECB004CA150 /* FiskerGallery */;
 			targetProxy = A7A3DEEB2678DECB004CA150 /* PBXContainerItemProxy */;
+		};
+		A7A3DF42267934FB004CA150 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7A3DEDF2678DECB004CA150 /* FiskerGallery */;
+			targetProxy = A7A3DF41267934FB004CA150 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -669,6 +742,42 @@
 			};
 			name = Release;
 		};
+		A7A3DF44267934FB004CA150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FiskerGalleryiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7A3DF45267934FB004CA150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FiskerGalleryiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -704,6 +813,15 @@
 			buildConfigurations = (
 				A7A3DF35267933DB004CA150 /* Debug */,
 				A7A3DF36267933DB004CA150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7A3DF43267934FB004CA150 /* Build configuration list for PBXNativeTarget "FiskerGalleryiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7A3DF44267934FB004CA150 /* Debug */,
+				A7A3DF45267934FB004CA150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
