@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7A3DEEA2678DECB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
+		A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		A7A3DEE42678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEF02678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEF02678DECB004CA150 /* Info.plist */,
+				A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */,
 			);
 			path = FiskerGalleryTests;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 					};
 					A7A3DEE82678DECB004CA150 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +384,7 @@
 		A7A3DEF82678DECB004CA150 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FiskerGalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,6 +394,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiskerGalleryTests/FiskerGalleryTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,6 +404,7 @@
 		A7A3DEF92678DECB004CA150 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FiskerGalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,6 +414,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiskerGalleryTests/FiskerGalleryTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
