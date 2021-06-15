@@ -29,22 +29,39 @@ struct RemoteGalleryLoader: GalleryLoader {
     let url: URL
     let client: HTTPClient
     
+    init(url: URL, client: HTTPClient) {
+        self.url = url
+        self.client = client
+    }
+    
     func load(completion: (GalleryLoader.Result) -> Void) {
-        
+        client.get(url: url, completion: { _ in })
     }
 }
 
 class RemoteGalleryLoaderTests: XCTestCase {
     
     func test_init_withoutRequest() {
-        let client = HTTPClientSpy()
-        let url = URL(string: "https://a-url.com")!
-        _ = RemoteGalleryLoader(url: url, client: client)
+        let (_, client) = makeSUT()
         
         XCTAssertEqual(client.requestUrls, [])
     }
     
+    func test_load_requestDataFromURL() {
+        let url = URL(string: "https://a-url.com")!
+        let (sut, client) = makeSUT()
+        sut.load(){ _ in }
+        
+        XCTAssertEqual(client.requestUrls, [url])
+    }
+    
     // MARK: - Helpers
+    private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGalleryLoader, spy: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = RemoteGalleryLoader(url: url, client: client)
+        return (sut, client)
+    }
+    
     class HTTPClientSpy: HTTPClient {
         private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
         
@@ -53,7 +70,7 @@ class RemoteGalleryLoaderTests: XCTestCase {
         }
         
         func get(url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
-
+            messages.append((url, completion))
         }
     }
 }
