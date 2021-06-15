@@ -9,6 +9,22 @@ import XCTest
 import FiskerGallery
 import Combine
 
+class GalleryItemCell: UICollectionViewCell {
+    public let authorLabel = UILabel()
+    public let imageView = UIImageView()
+    public let urlLabel = UILabel()
+}
+
+extension GalleryItemCell {
+    var authorText: String {
+        return authorLabel.text ?? ""
+    }
+    
+    var urlText: String {
+        return urlLabel.text ?? ""
+    }
+}
+
 class GalleryViewModel {
     private(set) var loader: GalleryLoader?
     
@@ -54,6 +70,14 @@ class GalleryViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel?.items.count ?? 0
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = self.viewModel?.items[indexPath.row]
+        let cell = GalleryItemCell()
+        cell.authorLabel.text = item?.author
+        cell.urlLabel.text = item?.url.absoluteString
+        return cell
+    }
 }
 
 extension GalleryViewController {
@@ -87,6 +111,7 @@ class GalleryViewControllerTests: XCTestCase {
         let image0 = makeItem(author: "a author")
         let image1 = makeItem(author: "another author")
 
+        let gallery = [image0, image1]
         let loader = LoaderSpy()
         let sut = GalleryViewController(viewModel: GalleryViewModel(loader: loader))
         
@@ -96,6 +121,9 @@ class GalleryViewControllerTests: XCTestCase {
         loader.completeGalleryLoading(with: [image0, image1], at: 0)
         assertThat(sut, isRendering: [image0, image1])
         
+        gallery.enumerated().forEach({ index, image in
+            assertThat(sut, hasViewConfiguredFor: image, at: index)
+        })
     }
     
     // MARK: - Helpers
@@ -108,6 +136,19 @@ class GalleryViewControllerTests: XCTestCase {
             return XCTFail("Expected \(feed.count) images, got \(sut.numberOfRenderedGalleryImageViews()) instead.", file: file, line: line)
         }
     }
+    
+    func assertThat(_ sut: GalleryViewController, hasViewConfiguredFor item: GalleryItem, at index: Int, file: StaticString = #filePath, line: UInt = #line) {
+        let view = sut.galleryImageView(at: index)
+        
+        guard let cell = view as? GalleryItemCell else {
+            return XCTFail("Expected \(GalleryItemCell.self) instance, got \(String(describing: view)) instead", file: file, line: line)
+        }
+                
+        XCTAssertEqual(cell.authorText, item.author, "Expected location text to be \(String(describing: item.author)) for image  view at index (\(index))", file: file, line: line)
+        
+        XCTAssertEqual(cell.urlText, item.url.absoluteString, "Expected location text to be \(String(describing: item.url)) for image  view at index (\(index))", file: file, line: line)
+    }
+
 }
 
 extension GalleryViewControllerTests {
