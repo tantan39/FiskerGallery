@@ -18,22 +18,6 @@ extension GalleryItemCell {
     }
 }
 
-extension GalleryViewController {
-    private var gallerySection: Int {
-        return 0
-    }
-    
-    func numberOfRenderedGalleryImageViews() -> Int {
-        return collectionView.numberOfItems(inSection: gallerySection)
-    }
-    
-    func galleryImageView(at row: Int) -> UICollectionViewCell? {
-        let ds = collectionView.dataSource
-        let indexPath = IndexPath(row: row, section: gallerySection)
-        return ds?.collectionView(collectionView, cellForItemAt: indexPath)
-    }
-}
-
 class GalleryViewControllerTests: XCTestCase {
     func test_loadGalleryActions_requestGalleryFromLoader() {
         let loader = LoaderSpy()

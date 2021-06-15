@@ -20,6 +20,7 @@
 		A7A3DF1226793089004CA150 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
 		A7A3DF15267930F3004CA150 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */; };
 		A7A3DF1826793131004CA150 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1726793131004CA150 /* GalleryItemCell.swift */; };
+		A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A7A3DF1126793089004CA150 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		A7A3DF1726793131004CA150 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
+		A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TestsHelper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DEF02678DECB004CA150 /* Info.plist */,
+				A7A3DF1A26793201004CA150 /* Helpers */,
 				A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */,
 				A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */,
 			);
@@ -154,6 +157,14 @@
 				A7A3DF1726793131004CA150 /* GalleryItemCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A7A3DF1A26793201004CA150 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 			files = (
 				A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */,
 				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
+				A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
