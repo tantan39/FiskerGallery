@@ -8,16 +8,6 @@
 import XCTest
 import FiskerGallery
 
-extension GalleryItemCell {
-    var authorText: String {
-        return authorLabel.text ?? ""
-    }
-    
-    var urlText: String {
-        return urlLabel.text ?? ""
-    }
-}
-
 class GalleryViewControllerTests: XCTestCase {
     func test_loadGalleryActions_requestGalleryFromLoader() {
         let loader = LoaderSpy()

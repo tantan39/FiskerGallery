@@ -21,6 +21,7 @@
 		A7A3DF15267930F3004CA150 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */; };
 		A7A3DF1826793131004CA150 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1726793131004CA150 /* GalleryItemCell.swift */; };
 		A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
+		A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		A7A3DF1726793131004CA150 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
 		A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TestsHelper.swift"; sourceTree = "<group>"; };
+		A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryItemCell+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */,
+				A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				A7A3DF1026790487004CA150 /* GalleryViewControllerTests.swift in Sources */,
 				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
 				A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
+				A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
