@@ -23,16 +23,11 @@
 		A7A3DF092678FDDA004CA150 /* GalleryItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */; };
 		A7A3DF0B2678FE08004CA150 /* RemoteGalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */; };
 		A7A3DF0D267902EE004CA150 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */; };
-		A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
-		A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 		A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF25267933D6004CA150 /* AppDelegate.swift */; };
 		A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF27267933D6004CA150 /* SceneDelegate.swift */; };
 		A7A3DF2F267933DB004CA150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF2E267933DB004CA150 /* Assets.xcassets */; };
 		A7A3DF32267933DB004CA150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A3DF30267933DB004CA150 /* LaunchScreen.storyboard */; };
 		A7A3DF40267934FB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
-		A7A3DF462679354B004CA150 /* GalleryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */; };
-		A7A3DF47267935C6004CA150 /* GalleryViewController+TestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */; };
-		A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */; };
 		A7A3DF4A2679408E004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DF4B2679408E004CA150 /* FiskerGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D070236AD9832CB1E58DF412 /* Pods_FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0BDB86800EA99314F808F4 /* Pods_FiskerGallery.framework */; };
@@ -104,12 +99,9 @@
 		A7A3DF082678FDDA004CA150 /* GalleryItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemsMapper.swift; sourceTree = "<group>"; };
 		A7A3DF0A2678FE08004CA150 /* RemoteGalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGalleryItem.swift; sourceTree = "<group>"; };
 		A7A3DF0C267902EE004CA150 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewControllerTests.swift; sourceTree = "<group>"; };
 		A7A3DF1126793089004CA150 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		A7A3DF1726793131004CA150 /* GalleryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCell.swift; sourceTree = "<group>"; };
-		A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+TestsHelper.swift"; sourceTree = "<group>"; };
-		A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryItemCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		A7A3DF23267933D6004CA150 /* FiskerGalleryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiskerGalleryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DF25267933D6004CA150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7A3DF27267933D6004CA150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -278,15 +270,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		A7A3DF1A26793201004CA150 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A7A3DF1B26793221004CA150 /* GalleryViewController+TestsHelper.swift */,
-				A7A3DF1D267932D7004CA150 /* GalleryItemCell+TestHelpers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		A7A3DF24267933D6004CA150 /* FiskerGalleryiOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,8 +286,6 @@
 		A7A3DF3C267934FB004CA150 /* FiskerGalleryiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7A3DF1A26793201004CA150 /* Helpers */,
-				A7A3DF0F26790487004CA150 /* GalleryViewControllerTests.swift */,
 				A7A3DF3F267934FB004CA150 /* Info.plist */,
 			);
 			path = FiskerGalleryiOSTests;
@@ -656,8 +637,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */,
-				A7A3DF1C26793221004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
-				A7A3DF1E267932D7004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,9 +659,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A3DF48267935CA004CA150 /* GalleryItemCell+TestHelpers.swift in Sources */,
-				A7A3DF462679354B004CA150 /* GalleryViewControllerTests.swift in Sources */,
-				A7A3DF47267935C6004CA150 /* GalleryViewController+TestsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
