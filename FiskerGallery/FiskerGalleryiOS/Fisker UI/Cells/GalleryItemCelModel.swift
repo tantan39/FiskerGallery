@@ -17,6 +17,7 @@ public class GalleryItemCelModel {
         guard let item = item else { return }
         author = item.author
         url = item.url
+        image = UIImage(named: "placeholder")
     }
     
     func setImage(image: UIImage?) {
