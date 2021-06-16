@@ -85,6 +85,7 @@
 		81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E3AD71D28DC62B536D0A691 /* Pods-FiskerGalleryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOS.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskerGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEE42678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,6 +296,7 @@
 		A7A3DF492679408E004CA150 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A75E7AFC26798F8B0075E123 /* SnapKit.framework */,
 				0C0BDB86800EA99314F808F4 /* Pods_FiskerGallery.framework */,
 				A971F849AD42539C5CB2AFB7 /* Pods_FiskerGallery_FiskerGalleryTests.framework */,
 				B0496B5CC65B9719BD9BF7EE /* Pods_FiskerGalleryiOS.framework */,
@@ -343,6 +345,7 @@
 				A7A3DEE52678DECB004CA150 /* Sources */,
 				A7A3DEE62678DECB004CA150 /* Frameworks */,
 				A7A3DEE72678DECB004CA150 /* Resources */,
+				0079A7E759E365042E793803 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +366,7 @@
 				A7A3DF20267933D6004CA150 /* Frameworks */,
 				A7A3DF21267933D6004CA150 /* Resources */,
 				A7A3DF4E2679408E004CA150 /* Embed Frameworks */,
+				E470A1577DD3B8528C2EA0CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,6 +386,7 @@
 				A7A3DF37267934FB004CA150 /* Sources */,
 				A7A3DF38267934FB004CA150 /* Frameworks */,
 				A7A3DF39267934FB004CA150 /* Resources */,
+				693A56356137545DAA5E6B78 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -473,6 +478,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0079A7E759E365042E793803 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGallery-FiskerGalleryTests/Pods-FiskerGallery-FiskerGalleryTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGallery-FiskerGalleryTests/Pods-FiskerGallery-FiskerGalleryTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FiskerGallery-FiskerGalleryTests/Pods-FiskerGallery-FiskerGalleryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		096B29C77CB6744F2D6FC75E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +539,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		693A56356137545DAA5E6B78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6DB1954A05D9FCAA643118AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,6 +598,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E470A1577DD3B8528C2EA0CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

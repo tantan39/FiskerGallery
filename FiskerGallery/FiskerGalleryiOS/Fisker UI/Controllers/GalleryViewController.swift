@@ -56,6 +56,7 @@ public class GalleryViewController: UICollectionViewController {
         let item = self.viewModel?.items[indexPath.row]
         cell.authorLabel.text = item?.author
         cell.urlLabel.text = item?.url
+        cell.configCell(item: item)
         cell.backgroundColor = .yellow
         return cell
     }

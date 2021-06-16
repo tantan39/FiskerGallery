@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 public class GalleryItemCell: UICollectionViewCell {
     public lazy var authorLabel: UILabel = {
@@ -26,7 +27,7 @@ public class GalleryItemCell: UICollectionViewCell {
     public override func prepareForReuse() {
         super.prepareForReuse()
         
-        setupUI()
+        setupUI()        
     }
     
     private func setupUI() {
@@ -37,6 +38,9 @@ public class GalleryItemCell: UICollectionViewCell {
     
     private func setupImageView() {
         self.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func setupAuthorLabel() {
@@ -45,5 +49,22 @@ public class GalleryItemCell: UICollectionViewCell {
 
     private func setupURLLabel() {
         self.addSubview(urlLabel)
+    }
+    
+    func configCell(item: GalleryItem?) {
+        guard let item = item else { return }
+        self.authorLabel.text = item.author
+        self.urlLabel.text = item.url
+        DispatchQueue.global().async {
+            if let url = URL(string: item.url), let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+                
+                DispatchQueue.main.async {
+                    
+                    self.imageView.image = image
+                }
+            }
+        }
+        
     }
 }
