@@ -11,7 +11,7 @@ import Combine
 public class GalleryViewModel {
     private(set) var loader: GalleryLoader?
     
-    @Published var items = [GalleryItem]()
+    @Published public var items = [GalleryItem]()
 
     public init(loader: GalleryLoader) {
         self.loader = loader

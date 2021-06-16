@@ -14,7 +14,7 @@ extension GalleryViewController {
     }
     
     func numberOfRenderedGalleryImageViews() -> Int {
-        return collectionView.numberOfItems(inSection: gallerySection)
+        return self.viewModel?.items.count ?? 0
     }
     
     func galleryImageView(at row: Int) -> UICollectionViewCell? {
