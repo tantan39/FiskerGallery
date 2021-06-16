@@ -24,7 +24,7 @@ public class GalleryViewController: UICollectionViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.isTranslucent = false
         self.collectionView.backgroundColor = .white
         self.collectionView.register(GalleryItemCell.self, forCellWithReuseIdentifier: "GalleryItemCell")
         
