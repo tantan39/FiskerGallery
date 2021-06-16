@@ -7,10 +7,17 @@
 
 import UIKit
 import Combine
+import FiskerGallery
+
+public protocol GalleryCellControllerDelegate {
+    func didRequestImage()
+    func didCancelImageRequest()
+}
 
 public class GalleryViewController: UICollectionViewController {
     public var viewModel: GalleryViewModel?
     private var cancellables = Set<AnyCancellable>()
+    private var delegate: GalleryCellControllerDelegate?
     
     public init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout(), viewModel: GalleryViewModel) {
         super.init(collectionViewLayout: layout)
@@ -51,13 +58,34 @@ public class GalleryViewController: UICollectionViewController {
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCell", for: indexPath) as? GalleryItemCell else { return UICollectionViewCell() }
-        
-        let item = self.viewModel?.items[indexPath.row]
-//        cell.configCell(item: item)
-        cell.backgroundColor = .yellow
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCell", for: indexPath) as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row] else { return UICollectionViewCell() }
+        cell.configCell(item: item)
         return cell
     }
+    
+    public override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row]  else { return }
+        
+        cell.imageView.image = nil
+    
+        ImageDownloadManager.shared.downloadImage(item, indexPath: indexPath) { (image, url, indexPathh, error) in
+            if let indexPathNew = indexPathh {
+                DispatchQueue.main.async {
+                    if let getCell = collectionView.cellForItem(at: indexPathNew) as? GalleryItemCell {
+                        getCell.imageView.image = image
+                    }
+                }
+            }
+        }
+
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        /* Reduce the priority of the network operation in case the user scrolls and an image is no longer visible. */
+        guard let item = self.viewModel?.items[indexPath.row] else { return }
+        ImageDownloadManager.shared.slowDownImageDownloadTaskfor(item)
+    }
+    
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {

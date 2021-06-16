@@ -7,6 +7,17 @@
 
 import Foundation
 import Combine
+import FiskerGallery
+
+public protocol GalleryImageDataLoaderTask {
+    func cancel()
+}
+
+public protocol GalleryImageDataLoader {
+    typealias Result = Swift.Result<Data, Error>
+    
+    func loadImageData(from url: URL, completion: @escaping (Result) -> Void) -> GalleryImageDataLoaderTask
+}
 
 public class GalleryViewModel {
     private(set) var loader: GalleryLoader?

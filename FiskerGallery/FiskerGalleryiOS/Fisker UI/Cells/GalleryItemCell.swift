@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FiskerGallery
 
 public class GalleryItemCell: UICollectionViewCell {
     public lazy var authorLabel: UILabel = {
@@ -23,6 +24,15 @@ public class GalleryItemCell: UICollectionViewCell {
         let label = UILabel()
         return label
     }()
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     public override func prepareForReuse() {
         super.prepareForReuse()
@@ -60,16 +70,5 @@ public class GalleryItemCell: UICollectionViewCell {
         guard let item = item else { return }
         self.authorLabel.text = item.author
         self.urlLabel.text = item.url
-        DispatchQueue.global().async {
-            if let url = URL(string: item.image), let data = try? Data(contentsOf: url) {
-                let image = UIImage(data: data)
-                
-                DispatchQueue.main.async {
-                    
-                    self.imageView.image = image
-                }
-            }
-        }
-        
     }
 }
