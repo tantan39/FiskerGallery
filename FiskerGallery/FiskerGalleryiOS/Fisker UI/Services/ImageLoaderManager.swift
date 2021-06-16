@@ -37,16 +37,13 @@ final class ImageDownloadManager {
         }
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {
             /* check for the cached image for url, if YES then return the cached image */
-            print("Return cached Image for \(url)")
            self.completionHandler?(cachedImage, url, indexPath, nil)
         } else {
              /* check if there is a download task that is currently downloading the same image. */
             if let operations = (imageDownloadQueue.operations as? [LoaderOperation])?.filter({$0.imageUrl.absoluteString == url.absoluteString && $0.isFinished == false && $0.isExecuting == true }), let operation = operations.first {
-                print("Increase the priority for \(url)")
                 operation.queuePriority = .veryHigh
             }else {
                 /* create a new task to download the image.  */
-                print("Create a new task for \(url)")
                 let operation = LoaderOperation(url: url, indexPath: indexPath)
                 if indexPath == nil {
                     operation.queuePriority = .high
@@ -68,7 +65,6 @@ final class ImageDownloadManager {
             return
         }
         if let operations = (imageDownloadQueue.operations as? [LoaderOperation])?.filter({$0.imageUrl.absoluteString == url.absoluteString && $0.isFinished == false && $0.isExecuting == true }), let operation = operations.first {
-            print("Reduce the priority for \(url)")
             operation.queuePriority = .low
         }
     }
