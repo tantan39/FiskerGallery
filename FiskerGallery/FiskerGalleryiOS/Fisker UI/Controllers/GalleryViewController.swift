@@ -8,16 +8,9 @@
 import UIKit
 import Combine
 import FiskerGallery
-
-public protocol GalleryCellControllerDelegate {
-    func didRequestImage()
-    func didCancelImageRequest()
-}
-
 public class GalleryViewController: UICollectionViewController {
     public var viewModel: GalleryViewModel?
     private var cancellables = Set<AnyCancellable>()
-    private var delegate: GalleryCellControllerDelegate?
     
     public init(collectionViewLayout layout: UICollectionViewLayout = UICollectionViewFlowLayout(), viewModel: GalleryViewModel) {
         super.init(collectionViewLayout: layout)
@@ -94,7 +87,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
         let padding = 20.0
         let column = 2.0
         let width: Double = ((Double(self.collectionView.bounds.width) - padding - 32) / column)
-        return CGSize(width: width, height: width + 20)
+        return CGSize(width: width, height: width + 60)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
