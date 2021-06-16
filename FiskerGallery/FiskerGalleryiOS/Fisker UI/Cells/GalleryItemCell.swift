@@ -12,6 +12,7 @@ import FiskerGallery
 public class GalleryItemCell: UICollectionViewCell {
     public lazy var authorLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         return label
     }()
     
@@ -22,6 +23,8 @@ public class GalleryItemCell: UICollectionViewCell {
     
     public lazy var urlLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 12)
         return label
     }()
     
@@ -58,12 +61,16 @@ public class GalleryItemCell: UICollectionViewCell {
         self.addSubview(authorLabel)
         authorLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
         }
     }
 
     private func setupURLLabel() {
         self.addSubview(urlLabel)
+        urlLabel.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(authorLabel.snp.top)
+        }
     }
     
     func configCell(item: GalleryItem?) {
