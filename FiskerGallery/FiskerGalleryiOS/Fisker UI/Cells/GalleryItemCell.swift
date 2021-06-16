@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FiskerGallery
+import Combine
 
 public class GalleryItemCell: UICollectionViewCell {
     public lazy var authorLabel: UILabel = {
@@ -18,6 +19,7 @@ public class GalleryItemCell: UICollectionViewCell {
     
     public lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "placeholder")
         return imageView
     }()
     
@@ -27,6 +29,9 @@ public class GalleryItemCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 12)
         return label
     }()
+    
+    @Published public var viewModel: GalleryItemCelModel?
+    private var cancellables = Set<AnyCancellable>()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +52,21 @@ public class GalleryItemCell: UICollectionViewCell {
         setupImageView()
         setupAuthorLabel()
         setupURLLabel()
+        
+        bindind()
+    }
+    
+    private func bindind() {
+        self.$viewModel.sink(receiveValue: { [weak self] viewModel in
+            guard let self = self, let vm = viewModel else { return }
+
+            vm.$author.assign(to: \.text, on: self.authorLabel)
+                .store(in: &self.cancellables)
+            vm.$url.assign(to: \.text, on: self.urlLabel)
+                .store(in: &self.cancellables)
+            vm.$image.assign(to: \.image, on: self.imageView)
+                .store(in: &self.cancellables)
+        }).store(in: &cancellables)
     }
     
     private func setupImageView() {
@@ -71,11 +91,5 @@ public class GalleryItemCell: UICollectionViewCell {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(authorLabel.snp.top)
         }
-    }
-    
-    func configCell(item: GalleryItem?) {
-        guard let item = item else { return }
-        self.authorLabel.text = item.author
-        self.urlLabel.text = item.url
     }
 }

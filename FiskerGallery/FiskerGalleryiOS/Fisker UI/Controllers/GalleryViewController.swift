@@ -48,20 +48,18 @@ public class GalleryViewController: UICollectionViewController {
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCell", for: indexPath) as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row] else { return UICollectionViewCell() }
-        cell.configCell(item: item)
+        cell.viewModel = GalleryItemCelModel(item: item)
         return cell
     }
     
     public override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row]  else { return }
-        
-        cell.imageView.image = UIImage(named: "placeholder")
+        guard let _ = cell as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row]  else { return }
     
         ImageDownloadManager.shared.downloadImage(item.imageDownloadURL, indexPath: indexPath) { (image, url, indexPathh, error) in
             if let indexPathNew = indexPathh {
                 DispatchQueue.main.async {
                     if let getCell = collectionView.cellForItem(at: indexPathNew) as? GalleryItemCell {
-                        getCell.imageView.image = image
+                        getCell.viewModel?.setImage(image: image)
                     }
                 }
             }
