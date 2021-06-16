@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -167,7 +167,6 @@
 				81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */,
 				A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -364,7 +363,6 @@
 				A7A3DF20267933D6004CA150 /* Frameworks */,
 				A7A3DF21267933D6004CA150 /* Resources */,
 				A7A3DF4E2679408E004CA150 /* Embed Frameworks */,
-				3258AC7E7DD7E41EA675C3D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -517,23 +515,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3258AC7E7DD7E41EA675C3D6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DB1954A05D9FCAA643118AE /* [CP] Check Pods Manifest.lock */ = {

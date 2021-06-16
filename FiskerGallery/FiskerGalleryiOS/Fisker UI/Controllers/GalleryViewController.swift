@@ -25,13 +25,12 @@ public class GalleryViewController: UICollectionViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.backgroundColor = .white
+        self.collectionView.register(GalleryItemCell.self, forCellWithReuseIdentifier: "GalleryItemCell")
         self.viewModel?.fetchGallery()
         
         self.viewModel?.$items.sink(receiveValue: { [weak self] item in
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            self.collectionView.reloadData()
         }).store(in: &cancellables)
     }
     
@@ -40,8 +39,9 @@ public class GalleryViewController: UICollectionViewController {
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCell", for: indexPath) as? GalleryItemCell else { return UICollectionViewCell() }
+        
         let item = self.viewModel?.items[indexPath.row]
-        let cell = GalleryItemCell()
         cell.authorLabel.text = item?.author
         cell.urlLabel.text = item?.url
         return cell

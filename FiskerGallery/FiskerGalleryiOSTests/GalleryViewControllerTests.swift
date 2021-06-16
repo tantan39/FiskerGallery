@@ -35,15 +35,15 @@ class GalleryViewControllerTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    func makeItem(author: String, url: URL = URL(string: "http://any-url.com")!) -> GalleryItem {
-        return GalleryItem(id: UUID(), author: author, url: url.absoluteString)
+    func makeItem(author: String, url: String = "http://any-url.com") -> GalleryItem {
+        return GalleryItem(id: "\(UUID())", author: author, url: url)
     }
     
     func assertThat(_ sut: GalleryViewController, isRendering gallery: [GalleryItem], file: StaticString = #filePath, line: UInt = #line) {
         guard sut.numberOfRenderedGalleryImageViews() == gallery.count else {
             return XCTFail("Expected \(gallery.count) images, got \(sut.numberOfRenderedGalleryImageViews()) instead.", file: file, line: line)
         }
-        
+
         gallery.enumerated().forEach({ index, image in
             assertThat(sut, hasViewConfiguredFor: image, at: index)
         })

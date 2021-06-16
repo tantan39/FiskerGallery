@@ -35,12 +35,12 @@ public class GalleryItemCell: UICollectionViewCell {
         setupURLLabel()
     }
     
-    private func setupAuthorLabel() {
-        self.addSubview(authorLabel)
-    }
-    
     private func setupImageView() {
         self.addSubview(imageView)
+    }
+    
+    private func setupAuthorLabel() {
+        self.addSubview(authorLabel)
     }
 
     private func setupURLLabel() {

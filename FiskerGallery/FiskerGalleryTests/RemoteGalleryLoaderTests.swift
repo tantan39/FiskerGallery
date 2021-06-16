@@ -79,9 +79,9 @@ class RemoteGalleryLoaderTests: XCTestCase {
     func test_load_deliversListItemOn200HTTPResponseWithJSONList() {
         let (sut, client) = makeSUT()
                 
-        let item1 = makeItem(id: UUID(), author: "author", url: URL(string: "https://a-url.com")!)
+        let item1 = makeItem(id: "id1", author: "author", url: "https://a-url.com")
         
-        let item2 = makeItem(id: UUID(), author: "another author", url: URL(string: "https://a-url.com")!)
+        let item2 = makeItem(id: "id2", author: "another author", url: "https://a-url.com")
         
         let items = [item1.model, item2.model]
         
@@ -125,15 +125,14 @@ class RemoteGalleryLoaderTests: XCTestCase {
     }
     
     private func makeJSONItems(_ items: [[String : Any]]) -> Data {
-        let json = ["array": items]
-        return try! JSONSerialization.data(withJSONObject: json)
+        return try! JSONSerialization.data(withJSONObject: items)
     }
     
-    private func makeItem(id: UUID, author: String, url: URL) -> (model: GalleryItem, json: [String: Any])  {
+    private func makeItem(id: String, author: String, url: String) -> (model: GalleryItem, json: [String: Any])  {
         let item = GalleryItem(id: id, author: author, url: url)
-        let json = [ "id": item.id.description,
+        let json = [ "id": item.id,
                           "author": item.author,
-                          "url": item.url.absoluteString
+                          "url": item.url
         ]
         .compactMapValues({ $0 })
         

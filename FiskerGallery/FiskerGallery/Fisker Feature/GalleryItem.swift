@@ -8,11 +8,11 @@
 import Foundation
 
 public struct GalleryItem: Equatable {
-    public let id: UUID
+    public let id: String
     public let author: String
     public let url: String
     
-    public init(id: UUID, author: String, url: String) {
+    public init(id: String, author: String, url: String) {
         self.id = id
         self.author = author
         self.url = url
