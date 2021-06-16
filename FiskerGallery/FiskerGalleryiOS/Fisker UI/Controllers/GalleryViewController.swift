@@ -41,11 +41,7 @@ public class GalleryViewController: UICollectionViewController {
             }
         }).store(in: &cancellables)
     }
-    
-    public override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel?.items.count ?? 0
     }
