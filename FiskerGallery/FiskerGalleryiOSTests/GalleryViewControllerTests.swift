@@ -36,7 +36,7 @@ class GalleryViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     func makeItem(author: String, url: String = "http://any-url.com") -> GalleryItem {
-        return GalleryItem(id: "\(UUID())", author: author, url: url)
+        return GalleryItem(id: "\(UUID())", author: author, url: url, image: url)
     }
     
     func assertThat(_ sut: GalleryViewController, isRendering gallery: [GalleryItem], file: StaticString = #filePath, line: UInt = #line) {

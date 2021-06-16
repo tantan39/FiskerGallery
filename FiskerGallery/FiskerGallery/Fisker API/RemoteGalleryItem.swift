@@ -11,4 +11,5 @@ struct RemoteGalleryItem: Decodable {
     internal let id: String
     internal let author: String
     internal let url: String
+    internal let download_url: String
 }

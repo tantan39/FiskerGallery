@@ -129,10 +129,11 @@ class RemoteGalleryLoaderTests: XCTestCase {
     }
     
     private func makeItem(id: String, author: String, url: String) -> (model: GalleryItem, json: [String: Any])  {
-        let item = GalleryItem(id: id, author: author, url: url)
+        let item = GalleryItem(id: id, author: author, url: url, image: url)
         let json = [ "id": item.id,
                           "author": item.author,
-                          "url": item.url
+                          "url": item.url,
+                          "download_url": item.url
         ]
         .compactMapValues({ $0 })
         

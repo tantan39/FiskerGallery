@@ -46,6 +46,6 @@ public class RemoteGalleryLoader: GalleryLoader {
 
 private extension Array where Element == RemoteGalleryItem {
     func toModels() -> [GalleryItem] {
-        return map({ GalleryItem(id: $0.id, author: $0.author, url: $0.url) })
+        return map({ GalleryItem(id: $0.id, author: $0.author, url: $0.url, image: $0.download_url) })
     }
 }
