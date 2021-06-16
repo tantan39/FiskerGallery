@@ -13,6 +13,7 @@
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
 		A75E7B0B267A3AC20075E123 /* GalleryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1726793131004CA150 /* GalleryItemCell.swift */; };
 		A75E7B0C267A3AC50075E123 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */; };
+		A75E7B0F267A49C20075E123 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B0E267A49C20075E123 /* DetailsViewController.swift */; };
 		A7A3DEEA2678DECB004CA150 /* FiskerGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */; };
 		A7A3DEFC2678E083004CA150 /* RemoteGalleryLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFB2678E083004CA150 /* RemoteGalleryLoaderTests.swift */; };
 		A7A3DF002678FC3E004CA150 /* GalleryLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DEFF2678FC3E004CA150 /* GalleryLoader.swift */; };
@@ -90,6 +91,7 @@
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
+		A75E7B0E267A49C20075E123 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A7A3DEE02678DECB004CA150 /* FiskerGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FiskerGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A3DEE42678DECB004CA150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7A3DEE92678DECB004CA150 /* FiskerGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiskerGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +265,7 @@
 			children = (
 				A7A3DF1126793089004CA150 /* GalleryViewController.swift */,
 				A7A3DF14267930F3004CA150 /* GalleryViewModel.swift */,
+				A75E7B0E267A49C20075E123 /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				A75E7B0B267A3AC20075E123 /* GalleryItemCell.swift in Sources */,
 				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
 				A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */,
+				A75E7B0F267A49C20075E123 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
