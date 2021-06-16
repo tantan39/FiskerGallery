@@ -39,12 +39,17 @@ public class GalleryItemCell: UICollectionViewCell {
     private func setupImageView() {
         self.addSubview(imageView)
         imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.width.equalToSuperview()
+            make.height.equalTo(self.snp.width)
         }
     }
     
     private func setupAuthorLabel() {
         self.addSubview(authorLabel)
+        authorLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
     }
 
     private func setupURLLabel() {
@@ -56,7 +61,7 @@ public class GalleryItemCell: UICollectionViewCell {
         self.authorLabel.text = item.author
         self.urlLabel.text = item.url
         DispatchQueue.global().async {
-            if let url = URL(string: item.url), let data = try? Data(contentsOf: url) {
+            if let url = URL(string: item.image), let data = try? Data(contentsOf: url) {
                 let image = UIImage(data: data)
                 
                 DispatchQueue.main.async {

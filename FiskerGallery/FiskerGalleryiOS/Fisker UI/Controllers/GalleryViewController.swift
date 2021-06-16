@@ -54,9 +54,7 @@ public class GalleryViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCell", for: indexPath) as? GalleryItemCell else { return UICollectionViewCell() }
         
         let item = self.viewModel?.items[indexPath.row]
-        cell.authorLabel.text = item?.author
-        cell.urlLabel.text = item?.url
-        cell.configCell(item: item)
+//        cell.configCell(item: item)
         cell.backgroundColor = .yellow
         return cell
     }
@@ -65,21 +63,21 @@ public class GalleryViewController: UICollectionViewController {
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding = 10.0
+        let padding = 20.0
         let column = 2.0
-        let width: Double = ((Double(self.collectionView.bounds.width) - (padding * 3)) / column)
-        return CGSize(width: width, height: width)
+        let width: Double = ((Double(self.collectionView.bounds.width) - padding - 32) / column)
+        return CGSize(width: width, height: width + 20)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
+        return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 20
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 16
     }
 }
