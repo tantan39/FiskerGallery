@@ -46,6 +46,7 @@ class DetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ImageDownloadManager.shared.cancelAll()
+        imageView.image = nil
     }
     
     private func binding() {
