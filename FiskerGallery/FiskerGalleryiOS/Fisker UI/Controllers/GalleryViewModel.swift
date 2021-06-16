@@ -13,6 +13,7 @@ public class GalleryViewModel {
     private(set) var loader: GalleryLoader?
     
     @Published public var items = [GalleryItem]()
+    @Published public var selectedItem: GalleryItem?
 
     public init(loader: GalleryLoader) {
         self.loader = loader

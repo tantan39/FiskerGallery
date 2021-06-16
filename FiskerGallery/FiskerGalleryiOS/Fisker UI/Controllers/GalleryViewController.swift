@@ -78,6 +78,10 @@ public class GalleryViewController: UICollectionViewController {
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = self.viewModel?.items[indexPath.row] else { return }
+        self.viewModel?.selectedItem = item
+    }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding = 20.0
