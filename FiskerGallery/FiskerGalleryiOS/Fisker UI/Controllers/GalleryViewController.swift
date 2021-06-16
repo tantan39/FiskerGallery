@@ -66,7 +66,7 @@ public class GalleryViewController: UICollectionViewController {
     public override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? GalleryItemCell, let item = self.viewModel?.items[indexPath.row]  else { return }
         
-        cell.imageView.image = nil
+        cell.imageView.image = UIImage(named: "placeholder")
     
         ImageDownloadManager.shared.downloadImage(item, indexPath: indexPath) { (image, url, indexPathh, error) in
             if let indexPathNew = indexPathh {
