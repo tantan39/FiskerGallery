@@ -30,9 +30,9 @@ final class ImageDownloadManager {
     static let shared = ImageDownloadManager()
     private init () {}
     
-    func downloadImage(_ item: GalleryItem, indexPath: IndexPath?, size: String = "m", handler: @escaping ImageDownloadHandler) {
+    func downloadImage(_ url: URL?, indexPath: IndexPath? = nil, size: String = "m", handler: @escaping ImageDownloadHandler) {
         self.completionHandler = handler
-        guard let url = item.imageDownloadURL else {
+        guard let url = url else {
             return
         }
         if let cachedImage = imageCache.object(forKey: url.absoluteString as NSString) {

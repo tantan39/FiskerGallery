@@ -57,7 +57,7 @@ public class GalleryViewController: UICollectionViewController {
         
         cell.imageView.image = UIImage(named: "placeholder")
     
-        ImageDownloadManager.shared.downloadImage(item, indexPath: indexPath) { (image, url, indexPathh, error) in
+        ImageDownloadManager.shared.downloadImage(item.imageDownloadURL, indexPath: indexPath) { (image, url, indexPathh, error) in
             if let indexPathNew = indexPathh {
                 DispatchQueue.main.async {
                     if let getCell = collectionView.cellForItem(at: indexPathNew) as? GalleryItemCell {
@@ -81,6 +81,8 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = self.viewModel?.items[indexPath.row] else { return }
         self.viewModel?.selectedItem = item
+        let detailsVC = DetailsViewController(viewModel: self.viewModel)
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
