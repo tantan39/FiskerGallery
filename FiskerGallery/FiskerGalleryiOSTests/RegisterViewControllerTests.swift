@@ -9,12 +9,13 @@ import XCTest
 
 struct RegisterViewModel {
     var isValidated: Bool {
-        guard let name = fullName, let mobile = mobile else { return false }
-        return !name.isEmpty && !mobile.isEmpty
+        guard let name = fullName, let mobile = mobile, let email = email else { return false }
+        return !name.isEmpty && !mobile.isEmpty && !email.isEmpty
     }
     
     var fullName: String?
     var mobile: String?
+    var email: String?
 }
 
 class RegisterViewController: UIViewController {
@@ -33,6 +34,12 @@ class RegisterViewController: UIViewController {
         return textfield
     }()
     
+    lazy var emailTextfield: UITextField = {
+        let textfield = UITextField()
+        textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
+        return textfield
+    }()
+    
     convenience init(viewModel: RegisterViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -42,6 +49,12 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+    }
+    
+    private func setupUI() {
+        self.view.addSubview(fullNameTextfield)
+        self.view.addSubview(mobileTextfield)
+        self.view.addSubview(emailTextfield)
     }
     
     @objc
@@ -54,23 +67,26 @@ class RegisterViewController: UIViewController {
         self.viewModel?.mobile = mobileTextfield.text
     }
     
-    private func setupUI() {
-        self.view.addSubview(fullNameTextfield)
-        self.view.addSubview(mobileTextfield)
+    @objc
+    @IBAction func emailTextfieldEditingChanged() {
+        self.viewModel?.email = emailTextfield.text
     }
 }
 
 extension RegisterViewController {
     func simulateFullNameInput() {
-        fullNameTextfield.becomeFirstResponder()
         fullNameTextfield.text = "user fullname"
         fullNameTextfield.simulate(event: .editingChanged)
     }
     
     func simulateMobileInput() {
-        mobileTextfield.becomeFirstResponder()
         mobileTextfield.text = "2042456125"
         mobileTextfield.simulate(event: .editingChanged)
+    }
+    
+    func simulateEmailInput() {
+        emailTextfield.text = "email address"
+        emailTextfield.simulate(event: .editingChanged)
     }
 }
 
@@ -89,9 +105,11 @@ class RegisterViewControllerTests: XCTestCase {
         
         sut.simulateFullNameInput()
         sut.simulateMobileInput()
+        sut.simulateEmailInput()
         
         XCTAssertEqual(sut.viewModel?.fullName?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.mobile?.isEmpty, false)
+        XCTAssertEqual(sut.viewModel?.email?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.isValidated, true)
     }
     
