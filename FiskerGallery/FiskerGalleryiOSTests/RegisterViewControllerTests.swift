@@ -9,13 +9,14 @@ import XCTest
 
 struct RegisterViewModel {
     var isValidated: Bool {
-        guard let name = fullName, let mobile = mobile, let email = email else { return false }
-        return !name.isEmpty && !mobile.isEmpty && !email.isEmpty
+        guard let name = fullName, let mobile = mobile, let email = email, let country = country else { return false }
+        return !name.isEmpty && !mobile.isEmpty && !email.isEmpty && !country.isEmpty
     }
     
     var fullName: String?
     var mobile: String?
     var email: String?
+    var country: String?
 }
 
 class RegisterViewController: UIViewController {
@@ -40,6 +41,12 @@ class RegisterViewController: UIViewController {
         return textfield
     }()
     
+    lazy var countryTextfield: UITextField = {
+        let textfield = UITextField()
+        textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
+        return textfield
+    }()
+    
     convenience init(viewModel: RegisterViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -55,6 +62,7 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(fullNameTextfield)
         self.view.addSubview(mobileTextfield)
         self.view.addSubview(emailTextfield)
+        self.view.addSubview(countryTextfield)
     }
     
     @objc
@@ -70,6 +78,11 @@ class RegisterViewController: UIViewController {
     @objc
     @IBAction func emailTextfieldEditingChanged() {
         self.viewModel?.email = emailTextfield.text
+    }
+    
+    @objc
+    @IBAction func countryTextfieldEditingChanged() {
+        self.viewModel?.country = countryTextfield.text
     }
 }
 
@@ -87,6 +100,11 @@ extension RegisterViewController {
     func simulateEmailInput() {
         emailTextfield.text = "email address"
         emailTextfield.simulate(event: .editingChanged)
+    }
+    
+    func simulateCountryInput() {
+        countryTextfield.text = "country or region"
+        countryTextfield.simulate(event: .editingChanged)
     }
 }
 
@@ -106,10 +124,12 @@ class RegisterViewControllerTests: XCTestCase {
         sut.simulateFullNameInput()
         sut.simulateMobileInput()
         sut.simulateEmailInput()
+        sut.simulateCountryInput()
         
         XCTAssertEqual(sut.viewModel?.fullName?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.mobile?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.email?.isEmpty, false)
+        XCTAssertEqual(sut.viewModel?.country?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.isValidated, true)
     }
     
