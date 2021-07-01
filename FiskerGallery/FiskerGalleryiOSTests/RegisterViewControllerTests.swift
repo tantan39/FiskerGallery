@@ -9,14 +9,15 @@ import XCTest
 
 struct RegisterViewModel {
     var isValidated: Bool {
-        guard let name = fullName, let mobile = mobile, let email = email, let country = country else { return false }
-        return !name.isEmpty && !mobile.isEmpty && !email.isEmpty && !country.isEmpty
+        guard let name = fullName, let mobile = mobile, let email = email, let country = country, let zipcode = zipcode else { return false }
+        return !name.isEmpty && !mobile.isEmpty && !email.isEmpty && !country.isEmpty && !zipcode.isEmpty
     }
     
     var fullName: String?
     var mobile: String?
     var email: String?
     var country: String?
+    var zipcode: String?
 }
 
 class RegisterViewController: UIViewController {
@@ -47,6 +48,12 @@ class RegisterViewController: UIViewController {
         return textfield
     }()
     
+    lazy var zipcodeTextfield: UITextField = {
+        let textfield = UITextField()
+        textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
+        return textfield
+    }()
+    
     convenience init(viewModel: RegisterViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -63,6 +70,7 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(mobileTextfield)
         self.view.addSubview(emailTextfield)
         self.view.addSubview(countryTextfield)
+        self.view.addSubview(zipcodeTextfield)
     }
     
     @objc
@@ -83,6 +91,11 @@ class RegisterViewController: UIViewController {
     @objc
     @IBAction func countryTextfieldEditingChanged() {
         self.viewModel?.country = countryTextfield.text
+    }
+    
+    @objc
+    @IBAction func zipcodeTextfieldEditingChanged() {
+        self.viewModel?.zipcode = zipcodeTextfield.text
     }
 }
 
@@ -106,6 +119,11 @@ extension RegisterViewController {
         countryTextfield.text = "country or region"
         countryTextfield.simulate(event: .editingChanged)
     }
+    
+    func simulateZipCodeInput() {
+        zipcodeTextfield.text = "23112"
+        zipcodeTextfield.simulate(event: .editingChanged)
+    }
 }
 
 class RegisterViewControllerTests: XCTestCase {
@@ -125,11 +143,13 @@ class RegisterViewControllerTests: XCTestCase {
         sut.simulateMobileInput()
         sut.simulateEmailInput()
         sut.simulateCountryInput()
+        sut.simulateZipCodeInput()
         
         XCTAssertEqual(sut.viewModel?.fullName?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.mobile?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.email?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.country?.isEmpty, false)
+        XCTAssertEqual(sut.viewModel?.zipcode?.isEmpty, false)
         XCTAssertEqual(sut.viewModel?.isValidated, true)
     }
     
