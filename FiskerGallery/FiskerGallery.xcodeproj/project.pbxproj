@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		81CF1D26EA3CC0BBDBA59579 /* Pods_FiskerGalleryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0496B5CC65B9719BD9BF7EE /* Pods_FiskerGalleryiOS.framework */; };
+		A745A8EF268E086300804545 /* RegisterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8EE268E086300804545 /* RegisterViewControllerTests.swift */; };
+		A745A8F1268E25D800804545 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8F0268E25D800804545 /* UIControl+TestHelpers.swift */; };
 		A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */; };
 		A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B08267A39FD0075E123 /* LoaderOperation.swift */; };
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
@@ -84,6 +86,9 @@
 		81921690B6FCB0261B775313 /* Pods-FiskerGalleryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E3AD71D28DC62B536D0A691 /* Pods-FiskerGalleryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOS.debug.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOS/Pods-FiskerGalleryiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A39BC139EDB2F0CF997BCC52 /* Pods-FiskerGalleryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiskerGalleryiOSTests.release.xcconfig"; path = "Target Support Files/Pods-FiskerGalleryiOSTests/Pods-FiskerGalleryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A745A8ED268E086200804545 /* FiskerGalleryiOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FiskerGalleryiOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A745A8EE268E086300804545 /* RegisterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerTests.swift; sourceTree = "<group>"; };
+		A745A8F0268E25D800804545 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
@@ -290,6 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				A7A3DF3F267934FB004CA150 /* Info.plist */,
+				A745A8F0268E25D800804545 /* UIControl+TestHelpers.swift */,
+				A745A8EE268E086300804545 /* RegisterViewControllerTests.swift */,
+				A745A8ED268E086200804545 /* FiskerGalleryiOSTests-Bridging-Header.h */,
 			);
 			path = FiskerGalleryiOSTests;
 			sourceTree = "<group>";
@@ -664,6 +672,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A745A8EF268E086300804545 /* RegisterViewControllerTests.swift in Sources */,
+				A745A8F1268E25D800804545 /* UIControl+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +988,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiskerGalleryiOSTests/FiskerGalleryiOSTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -999,6 +1010,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tantt.Prototype.FiskerGalleryiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiskerGalleryiOSTests/FiskerGalleryiOSTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
