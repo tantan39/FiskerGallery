@@ -9,12 +9,16 @@ import Foundation
 
 extension Dimension {
     struct shared {
+        static var mediumHorizontal: Float {
+            return 23.0
+        }
+        
         static var normalHorizontal: Float {
             return 28.0
         }
         
         static var normalHorizontal29: Float {
-            return 29.0
+            return 29.5
         }
         
         static var textfieldHeight: Float {

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+@testable import FiskerGalleryiOS
 extension RegisterViewController {
     func simulateFullNameInput() {
         fullNameTextfield.text = "user fullname"

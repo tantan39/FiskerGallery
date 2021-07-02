@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+@testable import FiskerGalleryiOS
 
 class RegisterViewControllerTests: XCTestCase {
     var cancellabels = Set<AnyCancellable>()

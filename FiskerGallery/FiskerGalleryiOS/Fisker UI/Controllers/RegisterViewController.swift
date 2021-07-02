@@ -16,12 +16,13 @@ public class RegisterViewController: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.axis = .vertical
+        stackView.spacing = 10
         return stackView
     }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Helvetica", size: 48)
+        label.font = UIFont(name: "Helvetica-Bold", size: 48)
         label.text = "Create an account".uppercased()
         label.numberOfLines = 0
         label.textColor = UIColor(hex: "F8F9A9")
@@ -30,6 +31,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var fullNameTextfield: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         textfield.addTarget(self, action: #selector(fullNameTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Full Name"
         return textfield
@@ -37,6 +39,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var mobileTextfield: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
         return textfield
@@ -44,6 +47,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var emailTextfield: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Email Address"
         return textfield
@@ -51,6 +55,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var countryTextfield: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Country or Region"
         return textfield
@@ -58,15 +63,16 @@ public class RegisterViewController: UIViewController {
     
     lazy var zipcodeTextfield: UITextField = {
         let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
         return textfield
     }()
     
     lazy var nextButton: UIButton = {
-        let button = UIButton()
-        button.isEnabled = false
+        let button = UIButton(type: .system)
         button.setTitle("Next".uppercased(), for: .normal)
+        button.setTitleColor(.white, for: .normal)
         return button
     }()
     
@@ -86,6 +92,7 @@ public class RegisterViewController: UIViewController {
     
     private func setupUI() {
         self.view.backgroundColor = UIColor(hex: "0992B5")
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOnBackgroundView)))
         
         setupTitleLabel()
         setupStackView()
@@ -98,8 +105,11 @@ public class RegisterViewController: UIViewController {
     }
     
     private func binding() {
-        self.viewModel?.isValidating.assign(to: \.isEnabled, on: self.nextButton)
-            .store(in: &cancellables)
+        self.viewModel?.isValidating.sink(receiveValue: { value in
+            self.nextButton.isEnabled = value
+            self.nextButton.backgroundColor = value ? UIColor(hex: "153052") : .gray
+
+        }).store(in: &cancellables)
     }
     
     func setupTitleLabel() {
@@ -115,7 +125,8 @@ public class RegisterViewController: UIViewController {
         self.view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(Dimension.shared.normalHorizontal)
-            make.leading.trailing.equalTo(titleLabel)
+            make.leading.equalToSuperview().offset(Dimension.shared.mediumHorizontal)
+            make.trailing.equalToSuperview().offset(-Dimension.shared.mediumHorizontal)
         }
     }
     
@@ -183,5 +194,9 @@ public class RegisterViewController: UIViewController {
     
     @IBAction func zipcodeTextfieldEditingChanged() {
         self.viewModel?.zipcode = zipcodeTextfield.text
+    }
+    
+    @IBAction func tapOnBackgroundView() {
+        self.view.endEditing(true)
     }
 }
