@@ -15,6 +15,8 @@
 		A745A8F6268E542300804545 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8F4268E522900804545 /* RegisterViewController.swift */; };
 		A745A8F7268E542900804545 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8F2268E51A000804545 /* RegisterViewModel.swift */; };
 		A745A8F9268E547B00804545 /* RegisterViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8F8268E547B00804545 /* RegisterViewController+TestHelpers.swift */; };
+		A745A8FF268F825F00804545 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8FE268F825F00804545 /* Dimension.swift */; };
+		A745A902268F859600804545 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A901268F859600804545 /* UIColor+Helpers.swift */; };
 		A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */; };
 		A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B08267A39FD0075E123 /* LoaderOperation.swift */; };
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
@@ -97,6 +99,8 @@
 		A745A8F2268E51A000804545 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A745A8F4268E522900804545 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A745A8F8268E547B00804545 /* RegisterViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+TestHelpers.swift"; sourceTree = "<group>"; };
+		A745A8FE268F825F00804545 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		A745A901268F859600804545 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
@@ -184,6 +188,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A745A8FD268F824D00804545 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A745A8FE268F825F00804545 /* Dimension.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A745A900268F857500804545 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A745A901268F859600804545 /* UIColor+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A75E7B0D267A44370075E123 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +280,8 @@
 		A7A3DF0E2679032C004CA150 /* Fisker UI */ = {
 			isa = PBXGroup;
 			children = (
+				A745A900268F857500804545 /* Helpers */,
+				A745A8FD268F824D00804545 /* Constants */,
 				A75E7B0D267A44370075E123 /* Services */,
 				A7A3DF1626793117004CA150 /* Cells */,
 				A7A3DF13267930B7004CA150 /* Controllers */,
@@ -675,9 +697,11 @@
 				A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */,
 				A75E7B0B267A3AC20075E123 /* GalleryItemCell.swift in Sources */,
 				A75E7B18267A7FB70075E123 /* GalleryItemCelModel.swift in Sources */,
+				A745A8FF268F825F00804545 /* Dimension.swift in Sources */,
 				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
 				A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */,
 				A75E7B0F267A49C20075E123 /* DetailsViewController.swift in Sources */,
+				A745A902268F859600804545 /* UIColor+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
