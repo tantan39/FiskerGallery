@@ -17,7 +17,7 @@ class FKTextfieldView: UIView {
         return stackView
     }()
     
-    private lazy var textfield: UITextField = {
+    lazy var textfield: UITextField = {
         let textfield = UITextField()
         textfield.addBottomBorder()
         textfield.font = .systemFont(ofSize: 16)
