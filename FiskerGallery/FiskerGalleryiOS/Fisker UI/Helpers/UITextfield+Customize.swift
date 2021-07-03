@@ -15,7 +15,7 @@ extension UITextField {
         borderStyle = .none
         self.addSubview(bottomLine)
         NSLayoutConstraint.activate([
-            bottomLine.topAnchor.constraint(equalTo: bottomAnchor, constant: -1),
+            bottomLine.topAnchor.constraint(equalTo: bottomAnchor, constant: 8),
             bottomLine.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomLine.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomLine.heightAnchor.constraint(equalToConstant: 1)

@@ -13,18 +13,23 @@ class FKTextfieldView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
+        stackView.spacing = 4
         return stackView
     }()
     
     private lazy var textfield: UITextField = {
         let textfield = UITextField()
         textfield.addBottomBorder()
+        textfield.font = .systemFont(ofSize: 16)
         return textfield
     }()
     
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.isHidden = false
+        label.textColor = validateErrorColor
+        label.text = " "
+        label.font = .systemFont(ofSize: 14)
         return label
     }()
     
@@ -82,17 +87,21 @@ class FKTextfieldView: UIView {
         stackView.addArrangedSubview(messageLabel)
     }
     
-    func showMessage(_ message: String?) {
+    private func showMessage(_ message: String?) {
         self.messageLabel.isHidden = false
         self.messageLabel.text = message
     }
     
-    func hideMessage() {
-        self.messageLabel.isHidden = false
+    private func hideMessage() {
+        self.messageLabel.text = " "
     }
     
     func validate() {
-        self.textfield.validate()
+        guard let value = textfield.text, !value.isEmpty else {
+            showMessage("error message")
+            return
+        }
+        hideMessage()
     }
     
     func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {

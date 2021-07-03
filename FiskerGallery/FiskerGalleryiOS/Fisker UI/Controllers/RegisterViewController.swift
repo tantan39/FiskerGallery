@@ -16,7 +16,7 @@ public class RegisterViewController: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.axis = .vertical
-        stackView.spacing = 30
+        stackView.spacing = 14
         return stackView
     }()
     
@@ -41,6 +41,7 @@ public class RegisterViewController: UIViewController {
         let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
+        textfield.textColor = .white
         return textfield
     }()
     
@@ -48,6 +49,7 @@ public class RegisterViewController: UIViewController {
         let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Email Address"
+        textfield.textColor = .white
         return textfield
     }()
     
@@ -55,6 +57,7 @@ public class RegisterViewController: UIViewController {
         let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Country or Region"
+        textfield.textColor = .white
         return textfield
     }()
     
@@ -62,6 +65,7 @@ public class RegisterViewController: UIViewController {
         let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
+        textfield.textColor = .white
         return textfield
     }()
     
@@ -69,6 +73,7 @@ public class RegisterViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Next".uppercased(), for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 26)
         return button
     }()
     

@@ -22,7 +22,7 @@ extension Dimension {
         }
         
         static var textfieldHeight: Float {
-            return 40.0
+            return 50.0
         }
         
         static var buttonHeight: Float {
