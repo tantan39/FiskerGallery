@@ -7,6 +7,22 @@
 
 import UIKit
 
+class Validation {
+    private var regex: String?
+    private var message: String?
+    
+    init(regex: String?, message: String?) {
+        self.regex = regex
+        self.message = message
+    }
+    
+    func matchesRegex(text: String) -> Bool {
+        guard let regex = regex else { return true }
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
+        return predicate.evaluate(with: text)
+    }
+}
+
 class FKTextfieldView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -56,10 +72,14 @@ class FKTextfieldView: UIView {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    private var validation: Validation?
+    
+    init(validationRegex: String? = nil, validationMessage: String? = nil) {
+        super.init(frame: .zero)
+        
         setupUI()
+        self.validation = Validation(regex: validationRegex, message: validationMessage)
+        
     }
 
     required init?(coder: NSCoder) {
@@ -100,9 +120,15 @@ class FKTextfieldView: UIView {
     
     func validate() {
         guard let value = textfield.text, !value.isEmpty else {
-            showMessage("error message")
+            showMessage("not empty message")
             return
         }
+        
+        if let validation = self.validation, !validation.matchesRegex(text: value) {
+            showMessage("invalid message")
+           return
+        }
+        
         hideMessage()
     }
     

@@ -30,7 +30,8 @@ public class RegisterViewController: UIViewController {
     }()
     
     lazy var fullNameTextfield: FKTextfieldView = {
-        let textfield = FKTextfieldView()
+        let fullnameRegex = "^[a-zA-Z]+ [a-zA-Z]+$"
+        let textfield = FKTextfieldView(validationRegex: fullnameRegex)
         textfield.addTarget(self, action: #selector(fullNameTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Full Name"
         textfield.textColor = .white
@@ -38,7 +39,8 @@ public class RegisterViewController: UIViewController {
     }()
     
     lazy var mobileTextfield: FKTextfieldView = {
-        let textfield = FKTextfieldView()
+        let mobileRegex = "^([1-9]{1})[0-9]{9}$"
+        let textfield = FKTextfieldView(validationRegex: mobileRegex)
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
         textfield.textColor = .white
@@ -46,7 +48,8 @@ public class RegisterViewController: UIViewController {
     }()
     
     lazy var emailTextfield: FKTextfieldView = {
-        let textfield = FKTextfieldView()
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let textfield = FKTextfieldView(validationRegex: emailRegEx)
         textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Email Address"
         textfield.textColor = .white
@@ -62,7 +65,8 @@ public class RegisterViewController: UIViewController {
     }()
     
     lazy var zipcodeTextfield: FKTextfieldView = {
-        let textfield = FKTextfieldView()
+        let zipcodeRegex = "^[0-9]+$"
+        let textfield = FKTextfieldView(validationRegex: zipcodeRegex)
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
         textfield.textColor = .white
