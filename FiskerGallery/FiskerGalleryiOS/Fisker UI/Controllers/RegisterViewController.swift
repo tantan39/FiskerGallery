@@ -165,14 +165,11 @@ public class RegisterViewController: UIViewController {
     
     private func setupMobileCodeView() {
         self.mobileStackView.addArrangedSubview(mobileCodeCustomView)
-//        self.mobileCodeCustomView.snp.makeConstraints { maker in
-//            maker.width.equalToSuperview().multipliedBy(0.15)
-//        }
         
         let spacing = UIView()
         self.mobileStackView.addArrangedSubview(spacing)
         spacing.snp.makeConstraints { maker in
-            maker.width.equalTo(20)
+            maker.width.equalTo(16)
         }
     }
     
