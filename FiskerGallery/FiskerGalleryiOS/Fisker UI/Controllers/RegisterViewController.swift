@@ -106,6 +106,7 @@ public class RegisterViewController: UIViewController {
         button.setTitle("Next".uppercased(), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 26)
+        button.addTarget(self, action: #selector(nextButton_Pressed), for: .touchUpInside)
         return button
     }()
     
@@ -328,6 +329,14 @@ public class RegisterViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func nextButton_Pressed() {
+        DispatchQueue(label: "com.fisker.queue").asyncAfter(deadline: DispatchTime.now() + 2) {
+            print("register successfully")
+        }
+    }
+}
+
+extension RegisterViewController {
     @objc private func keyboardWillShow(notification: Notification) {
         guard zipcodeTextfield.textfield.isEditing else { return }
         guard let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
