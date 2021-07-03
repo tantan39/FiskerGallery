@@ -16,54 +16,50 @@ public class RegisterViewController: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 30
         return stackView
     }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Helvetica-Bold", size: 48)
+        label.font = UIFont(name: "Helvetica-Bold", size: 47)
         label.text = "Create an account".uppercased()
         label.numberOfLines = 0
         label.textColor = UIColor(hex: "F8F9A9")
         return label
     }()
     
-    lazy var fullNameTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.addBottomBorder()
+    lazy var fullNameTextfield: FKTextfieldView = {
+        let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(fullNameTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Full Name"
+        textfield.textColor = .white
         return textfield
     }()
     
-    lazy var mobileTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.addBottomBorder()
+    lazy var mobileTextfield: FKTextfieldView = {
+        let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
         return textfield
     }()
     
-    lazy var emailTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.addBottomBorder()
+    lazy var emailTextfield: FKTextfieldView = {
+        let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Email Address"
         return textfield
     }()
     
-    lazy var countryTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.addBottomBorder()
+    lazy var countryTextfield: FKTextfieldView = {
+        let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Country or Region"
         return textfield
     }()
     
-    lazy var zipcodeTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.addBottomBorder()
+    lazy var zipcodeTextfield: FKTextfieldView = {
+        let textfield = FKTextfieldView()
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
         return textfield
