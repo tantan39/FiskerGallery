@@ -57,6 +57,7 @@ public class RegisterViewController: UIViewController {
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
         textfield.textColor = .white
+        textfield.keyboardType = .phonePad
         return textfield
     }()
     
@@ -85,6 +86,7 @@ public class RegisterViewController: UIViewController {
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
         textfield.textColor = .white
+        textfield.keyboardType = .numberPad
         return textfield
     }()
     

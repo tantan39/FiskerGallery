@@ -75,6 +75,12 @@ class FKTextfieldView: UIView {
         }
     }
     
+    var keyboardType: UIKeyboardType = .default {
+        didSet {
+            self.textfield.keyboardType = keyboardType
+        }
+    }
+    
     private var validation: Validation?
     
     init(validationRegex: String? = nil, validationMessage: String? = nil) {
