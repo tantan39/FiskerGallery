@@ -121,18 +121,19 @@ class FKTextfieldView: UIView {
         self.textfield.setBottomLineColor(.white)
     }
     
-    func validate() {
+    func validate() -> Bool {
         guard let value = textfield.text, !value.isEmpty else {
             showMessage(validation?.message)
-            return
+            return false
         }
         
         if let validation = self.validation, !validation.matchesRegex(text: value) {
             showMessage(validation.message)
-           return
+           return false
         }
         
         hideMessage()
+        return true
     }
     
     func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {

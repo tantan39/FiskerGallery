@@ -18,22 +18,23 @@ public class RegisterViewModel {
     @Published public var zipcode: String?
     @Published public var countries: [String] = ["US", "UK", "Canada", "Germany"]
     
+    let fullNameValidate = CurrentValueSubject<Bool, Never>(false)
+    let mobileValidate = CurrentValueSubject<Bool, Never>(false)
+    let emailValidate = CurrentValueSubject<Bool, Never>(false)
+    let countryValidate = CurrentValueSubject<Bool, Never>(false)
+    let zipCodeValidate = CurrentValueSubject<Bool, Never>(false)
+    
     private var firstPubliser: AnyPublisher<Bool, Never> {
-        return Publishers.CombineLatest3($fullName, $mobile, $email)
+        return Publishers.CombineLatest3(fullNameValidate, mobileValidate, emailValidate)
             .map { name, mobile, email in
-            guard let name = name, let phone = mobile, let email = email else {
-                return false
-            }
-            return !name.isEmpty && !phone.isEmpty && !email.isEmpty        }.eraseToAnyPublisher()
+                return name && mobile && email
+            }.eraseToAnyPublisher()
     }
     
     private var secondPublisher: AnyPublisher<Bool, Never> {
-        return Publishers.CombineLatest ($country, $zipcode)
+        return Publishers.CombineLatest (countryValidate, zipCodeValidate)
             .map { country, zipcode in
-                guard let country = country, let zipcode = zipcode else {
-                    return false
-                }
-                return !country.isEmpty && !zipcode.isEmpty
+                return country && zipcode
             }.eraseToAnyPublisher()
     }
     

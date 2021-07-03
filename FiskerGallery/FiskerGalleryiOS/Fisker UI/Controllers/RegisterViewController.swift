@@ -292,27 +292,27 @@ public class RegisterViewController: UIViewController {
     
     @IBAction func fullNameTextfieldEditingChanged() {
         self.viewModel?.fullName = fullNameTextfield.text
-        self.fullNameTextfield.validate()
+        self.viewModel?.fullNameValidate.send(self.fullNameTextfield.validate())
     }
     
     @IBAction func mobileTextfieldEditingChanged() {
         self.viewModel?.mobile = mobileTextfield.text
-        self.mobileTextfield.validate()
+        self.viewModel?.mobileValidate.send(self.mobileTextfield.validate())
     }
     
     @IBAction func emailTextfieldEditingChanged() {
         self.viewModel?.email = emailTextfield.text
-        self.emailTextfield.validate()
+        self.viewModel?.emailValidate.send(self.emailTextfield.validate())
     }
     
     @IBAction func countryTextfieldEditingChanged() {
         self.viewModel?.country = countryTextfield.text
-        self.countryTextfield.validate()
+        self.viewModel?.countryValidate.send(self.countryTextfield.validate())
     }
     
     @IBAction func zipcodeTextfieldEditingChanged() {
         self.viewModel?.zipcode = zipcodeTextfield.text
-        self.zipcodeTextfield.validate()
+        self.viewModel?.zipCodeValidate.send(self.zipcodeTextfield.validate())
     }
     
     @IBAction func tapOnBackgroundView() {
