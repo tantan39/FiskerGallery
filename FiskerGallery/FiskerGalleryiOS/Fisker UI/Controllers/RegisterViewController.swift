@@ -16,7 +16,7 @@ public class RegisterViewController: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.axis = .vertical
-        stackView.spacing = 14
+        stackView.spacing = 20
         return stackView
     }()
     
@@ -36,6 +36,30 @@ public class RegisterViewController: UIViewController {
         textfield.placeholder = "Full Name"
         textfield.textColor = .white
         return textfield
+    }()
+    
+    lazy var mobileStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    lazy var mobileCodeButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("+1", for: .normal)
+        button.setTitleColor(UIColor(hex: "153052"), for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = .systemFont(ofSize: 16)
+        return button
+    }()
+    
+    lazy var dropDrownIcon: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "icon-dropdown")
+        imageView.contentMode = .left
+        return imageView
     }()
     
     lazy var mobileTextfield: FKTextfieldView = {
@@ -102,6 +126,9 @@ public class RegisterViewController: UIViewController {
         setupTitleLabel()
         setupStackView()
         setupFullNameTextfield()
+        setupMobileStackView()
+        setupMobileCodeButton()
+        setupDropdownIcon()
         setupMobileTextfield()
         setupEmailTextfield()
         setupCountryTextfield()
@@ -142,8 +169,32 @@ public class RegisterViewController: UIViewController {
         }
     }
     
+    private func setupMobileStackView() {
+        self.stackView.addArrangedSubview(mobileStackView)
+    }
+    
+    private func setupMobileCodeButton() {
+        self.mobileStackView.addArrangedSubview(mobileCodeButton)
+        self.mobileCodeButton.snp.makeConstraints { maker in
+            maker.width.equalToSuperview().multipliedBy(0.08)
+        }
+    }
+    
+    private func setupDropdownIcon() {
+        self.mobileStackView.addArrangedSubview(dropDrownIcon)
+        dropDrownIcon.snp.makeConstraints { maker in
+            maker.width.equalTo(9)
+        }
+        
+        let spacing = UIView()
+        self.mobileStackView.addArrangedSubview(spacing)
+        spacing.snp.makeConstraints { maker in
+            maker.width.equalTo(18)
+        }
+    }
+    
     private func setupMobileTextfield() {
-        self.stackView.addArrangedSubview(mobileTextfield)
+        self.mobileStackView.addArrangedSubview(mobileTextfield)
         mobileTextfield.snp.makeConstraints { maker in
             maker.height.equalTo(fullNameTextfield)
         }
