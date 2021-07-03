@@ -19,12 +19,12 @@ extension RegisterViewController {
     }
     
     func simulateEmailInput() {
-        emailTextfield.text = "email address"
+        emailTextfield.text = "email@gmail.com"
         emailTextfield.textfield.simulate(event: .editingChanged)
     }
     
     func simulateCountryInput() {
-        countryTextfield.text = "country or region"
+        countryTextfield.text = "US"
         countryTextfield.textfield.simulate(event: .editingChanged)
     }
     
