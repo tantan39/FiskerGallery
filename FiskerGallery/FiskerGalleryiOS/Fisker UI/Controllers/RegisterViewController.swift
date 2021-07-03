@@ -88,12 +88,53 @@ public class RegisterViewController: UIViewController {
         return textfield
     }()
     
+    lazy var privacyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "By clicking “Next” you agree to Fisker’s Terms of Use and Privacy Policy agreement."
+        label.font = UIFont(name: "Helvetica", size: 11)
+        label.textColor = .white
+        label.alpha = 0.5
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+    
     lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Next".uppercased(), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 26)
         return button
+    }()
+    
+    lazy var signInLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Helvetica", size: 11)
+        let attributeString = NSMutableAttributedString()
+        let haveAnAccount = NSAttributedString(string: "Have an Account? ", attributes: [
+            NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 14)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ])
+        
+        let logIn = NSAttributedString(string: "Log In", attributes: [
+            NSAttributedString.Key.font: UIFont(name: "Helvetica-bold", size: 14)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ])
+        attributeString.append(haveAnAccount)
+        attributeString.append(logIn)
+        label.attributedText = attributeString
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var textRatesLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Standard text message rates apply."
+        label.font = UIFont(name: "Helvetica", size: 11)
+        label.textColor = .white
+        label.alpha = 0.5
+        label.textAlignment = .center
+        return label
     }()
     
     lazy var countryPickerView: UIPickerView = {
@@ -132,7 +173,10 @@ public class RegisterViewController: UIViewController {
         setupEmailTextfield()
         setupCountryTextfield()
         setupZipcodeTextfield()
+        setupPrivacyLabel()
         setupNextButton()
+        setupSignInLabel()
+        setupTextRatesLabel()
     }
     
     private func binding() {
@@ -211,13 +255,38 @@ public class RegisterViewController: UIViewController {
         }
     }
     
+    private func setupPrivacyLabel() {
+        self.view.addSubview(self.privacyLabel)
+        self.privacyLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(stackView.snp.bottom).offset(Dimension.shared.normalVertical40)
+            maker.leading.equalToSuperview().offset(Dimension.shared.largeHorizontal)
+            maker.trailing.equalToSuperview().offset(-Dimension.shared.largeHorizontal)
+        }
+    }
+    
     private func setupNextButton() {
         self.view.addSubview(nextButton)
         nextButton.snp.makeConstraints { maker in
-            maker.top.equalTo(self.stackView.snp.bottom).offset(Dimension.shared.normalHorizontal)
+            maker.top.equalTo(self.privacyLabel.snp.bottom).offset(Dimension.shared.mediumVertical)
             maker.leading.equalToSuperview().offset(Dimension.shared.normalHorizontal29)
             maker.trailing.equalToSuperview().offset(-Dimension.shared.normalHorizontal29)
             maker.height.equalTo(Dimension.shared.buttonHeight)
+        }
+    }
+    
+    private func setupSignInLabel() {
+        self.view.addSubview(self.signInLabel)
+        self.signInLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(nextButton.snp.bottom).offset(Dimension.shared.mediumVertical)
+            maker.centerX.equalTo(nextButton)
+        }
+    }
+    
+    private func setupTextRatesLabel() {
+        self.view.addSubview(self.textRatesLabel)
+        self.textRatesLabel.snp.makeConstraints { maker in
+            maker.top.equalTo(signInLabel.snp.bottom).offset(34)
+            maker.centerX.equalTo(signInLabel)
         }
     }
     

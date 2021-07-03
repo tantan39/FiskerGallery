@@ -13,12 +13,24 @@ extension Dimension {
             return 23.0
         }
         
+        static var mediumVertical: Float {
+            return 23.0
+        }
+        
         static var normalHorizontal: Float {
             return 28.0
         }
         
         static var normalHorizontal29: Float {
             return 29.5
+        }
+        
+        static var normalVertical40: Float {
+            return 40.0
+        }
+        
+        static var largeHorizontal: Float {
+            return 60.0
         }
         
         static var textfieldHeight: Float {
