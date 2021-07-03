@@ -21,6 +21,10 @@
 		A745A90A268FB6A500804545 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8FE268F825F00804545 /* Dimension.swift */; };
 		A745A90C268FECFD00804545 /* UITextfield+Validates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90B268FECFC00804545 /* UITextfield+Validates.swift */; };
 		A745A90D268FECFD00804545 /* UITextfield+Validates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90B268FECFC00804545 /* UITextfield+Validates.swift */; };
+		A745A910268FEEB000804545 /* FKTextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90F268FEEB000804545 /* FKTextfieldView.swift */; };
+		A745A911268FEEB000804545 /* FKTextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90F268FEEB000804545 /* FKTextfieldView.swift */; };
+		A745A913268FEFAD00804545 /* UITextfield+Customize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A912268FEFAD00804545 /* UITextfield+Customize.swift */; };
+		A745A914268FEFAD00804545 /* UITextfield+Customize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A912268FEFAD00804545 /* UITextfield+Customize.swift */; };
 		A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */; };
 		A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B08267A39FD0075E123 /* LoaderOperation.swift */; };
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
@@ -106,6 +110,8 @@
 		A745A8FE268F825F00804545 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		A745A901268F859600804545 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		A745A90B268FECFC00804545 /* UITextfield+Validates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Validates.swift"; sourceTree = "<group>"; };
+		A745A90F268FEEB000804545 /* FKTextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKTextfieldView.swift; sourceTree = "<group>"; };
+		A745A912268FEFAD00804545 /* UITextfield+Customize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Customize.swift"; sourceTree = "<group>"; };
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
@@ -206,8 +212,17 @@
 			children = (
 				A745A901268F859600804545 /* UIColor+Helpers.swift */,
 				A745A90B268FECFC00804545 /* UITextfield+Validates.swift */,
+				A745A912268FEFAD00804545 /* UITextfield+Customize.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A745A90E268FEE8100804545 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A745A90F268FEEB000804545 /* FKTextfieldView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A75E7B0D267A44370075E123 /* Services */ = {
@@ -286,6 +301,7 @@
 		A7A3DF0E2679032C004CA150 /* Fisker UI */ = {
 			isa = PBXGroup;
 			children = (
+				A745A90E268FEE8100804545 /* Views */,
 				A745A900268F857500804545 /* Helpers */,
 				A745A8FD268F824D00804545 /* Constants */,
 				A75E7B0D267A44370075E123 /* Services */,
@@ -698,6 +714,7 @@
 				A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */,
 				A745A8F5268E522900804545 /* RegisterViewController.swift in Sources */,
 				A745A8F3268E51A100804545 /* RegisterViewModel.swift in Sources */,
+				A745A910268FEEB000804545 /* FKTextfieldView.swift in Sources */,
 				A75E7B0C267A3AC50075E123 /* GalleryViewModel.swift in Sources */,
 				A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */,
 				A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */,
@@ -705,6 +722,7 @@
 				A745A90C268FECFD00804545 /* UITextfield+Validates.swift in Sources */,
 				A75E7B18267A7FB70075E123 /* GalleryItemCelModel.swift in Sources */,
 				A745A8FF268F825F00804545 /* Dimension.swift in Sources */,
+				A745A913268FEFAD00804545 /* UITextfield+Customize.swift in Sources */,
 				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
 				A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */,
 				A75E7B0F267A49C20075E123 /* DetailsViewController.swift in Sources */,
@@ -722,8 +740,10 @@
 				A745A8F9268E547B00804545 /* RegisterViewController+TestHelpers.swift in Sources */,
 				A745A90A268FB6A500804545 /* Dimension.swift in Sources */,
 				A745A90D268FECFD00804545 /* UITextfield+Validates.swift in Sources */,
+				A745A911268FEEB000804545 /* FKTextfieldView.swift in Sources */,
 				A745A8F1268E25D800804545 /* UIControl+TestHelpers.swift in Sources */,
 				A745A907268FB68700804545 /* RegisterViewController.swift in Sources */,
+				A745A914268FEFAD00804545 /* UITextfield+Customize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

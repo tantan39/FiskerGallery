@@ -31,8 +31,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var fullNameTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.borderStyle = .line
-        textfield.layer.borderWidth = 1
+        textfield.addBottomBorder()
         textfield.addTarget(self, action: #selector(fullNameTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Full Name"
         return textfield
@@ -40,8 +39,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var mobileTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.borderStyle = .line
-        textfield.layer.borderWidth = 1
+        textfield.addBottomBorder()
         textfield.addTarget(self, action: #selector(mobileTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Mobile"
         return textfield
@@ -49,8 +47,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var emailTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.borderStyle = .line
-        textfield.layer.borderWidth = 1
+        textfield.addBottomBorder()
         textfield.addTarget(self, action: #selector(emailTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Email Address"
         return textfield
@@ -58,8 +55,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var countryTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.borderStyle = .line
-        textfield.layer.borderWidth = 1
+        textfield.addBottomBorder()
         textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Country or Region"
         return textfield
@@ -67,8 +63,7 @@ public class RegisterViewController: UIViewController {
     
     lazy var zipcodeTextfield: UITextField = {
         let textfield = UITextField()
-        textfield.borderStyle = .line
-        textfield.layer.borderWidth = 1
+        textfield.addBottomBorder()
         textfield.addTarget(self, action: #selector(zipcodeTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Zip or Postal Code"
         return textfield
