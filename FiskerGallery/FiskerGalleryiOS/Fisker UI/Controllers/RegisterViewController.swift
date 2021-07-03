@@ -42,24 +42,13 @@ public class RegisterViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.alignment = .center
+        stackView.alignment = .top
         return stackView
     }()
     
-    lazy var mobileCodeButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("+1", for: .normal)
-        button.setTitleColor(UIColor(hex: "153052"), for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = .systemFont(ofSize: 16)
-        return button
-    }()
-    
-    lazy var dropDrownIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "icon-dropdown")
-        imageView.contentMode = .left
-        return imageView
+    lazy var mobileCodeCustomView: MobileCodeCustomView = {
+        let view = MobileCodeCustomView()
+        return view
     }()
     
     lazy var mobileTextfield: FKTextfieldView = {
@@ -127,8 +116,7 @@ public class RegisterViewController: UIViewController {
         setupStackView()
         setupFullNameTextfield()
         setupMobileStackView()
-        setupMobileCodeButton()
-        setupDropdownIcon()
+        setupMobileCodeView()
         setupMobileTextfield()
         setupEmailTextfield()
         setupCountryTextfield()
@@ -173,23 +161,16 @@ public class RegisterViewController: UIViewController {
         self.stackView.addArrangedSubview(mobileStackView)
     }
     
-    private func setupMobileCodeButton() {
-        self.mobileStackView.addArrangedSubview(mobileCodeButton)
-        self.mobileCodeButton.snp.makeConstraints { maker in
+    private func setupMobileCodeView() {
+        self.mobileStackView.addArrangedSubview(mobileCodeCustomView)
+        self.mobileCodeCustomView.snp.makeConstraints { maker in
             maker.width.equalToSuperview().multipliedBy(0.08)
-        }
-    }
-    
-    private func setupDropdownIcon() {
-        self.mobileStackView.addArrangedSubview(dropDrownIcon)
-        dropDrownIcon.snp.makeConstraints { maker in
-            maker.width.equalTo(9)
         }
         
         let spacing = UIView()
         self.mobileStackView.addArrangedSubview(spacing)
         spacing.snp.makeConstraints { maker in
-            maker.width.equalTo(18)
+            maker.width.equalTo(20)
         }
     }
     
