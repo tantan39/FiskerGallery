@@ -9,7 +9,7 @@ import UIKit
 
 class Validation {
     private var regex: String?
-    private var message: String?
+    private(set) var message: String?
     
     init(regex: String?, message: String?) {
         self.regex = regex
@@ -123,12 +123,12 @@ class FKTextfieldView: UIView {
     
     func validate() {
         guard let value = textfield.text, !value.isEmpty else {
-            showMessage("not empty message")
+            showMessage(validation?.message)
             return
         }
         
         if let validation = self.validation, !validation.matchesRegex(text: value) {
-            showMessage("invalid message")
+            showMessage(validation.message)
            return
         }
         
