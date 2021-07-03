@@ -158,6 +158,7 @@ public class RegisterViewController: UIViewController {
         
         setupUI()
         binding()
+        registerNotifications()
     }
     
     private func setupUI() {
@@ -186,6 +187,12 @@ public class RegisterViewController: UIViewController {
 
         }).store(in: &cancellables)
     }
+    
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
     
     func setupTitleLabel() {
         self.view.addSubview(titleLabel)
@@ -317,5 +324,25 @@ public class RegisterViewController: UIViewController {
     
     @IBAction func tapOnBackgroundView() {
         self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let zipcodeFrame = stackView.convert(zipcodeTextfield.frame, to: self.view)
+        let overlappedHeight = keyboardRectangle.origin.y - zipcodeFrame.maxY
+
+        guard (overlappedHeight < 0) else { return }
+        UIView.animate(withDuration: 0.35) {
+            self.view.transform = CGAffineTransform(translationX: 0, y: overlappedHeight-15)
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        
+        UIView.animate(withDuration: 0.35) {
+            self.view.transform = CGAffineTransform.identity
+        }
     }
 }
