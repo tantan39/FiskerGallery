@@ -37,6 +37,7 @@ class FKTextfieldView: UIView {
         let textfield = UITextField()
         textfield.addBottomBorder()
         textfield.font = .systemFont(ofSize: 16)
+        textfield.setLeftPadding(5)
         return textfield
     }()
     
