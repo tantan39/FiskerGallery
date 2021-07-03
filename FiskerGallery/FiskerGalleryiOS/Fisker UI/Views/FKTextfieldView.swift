@@ -51,7 +51,9 @@ class FKTextfieldView: UIView {
     
     var placeholder: String? = nil {
         didSet {
-            self.textfield.placeholder = placeholder
+            self.textfield.attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
+                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+
         }
     }
     
