@@ -90,10 +90,12 @@ class FKTextfieldView: UIView {
     private func showMessage(_ message: String?) {
         self.messageLabel.isHidden = false
         self.messageLabel.text = message
+        self.textfield.setBottomLineColor(.red)
     }
     
     private func hideMessage() {
         self.messageLabel.text = " "
+        self.textfield.setBottomLineColor(.white)
     }
     
     func validate() {

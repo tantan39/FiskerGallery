@@ -10,6 +10,7 @@ import UIKit
 extension UITextField {
     func addBottomBorder(_ color: UIColor? = .white){
         let bottomLine = UIView()
+        bottomLine.tag = 999
         bottomLine.translatesAutoresizingMaskIntoConstraints = false
         bottomLine.backgroundColor = color
         borderStyle = .none
@@ -21,5 +22,10 @@ extension UITextField {
             bottomLine.heightAnchor.constraint(equalToConstant: 1)
         ])
         
+    }
+    
+    func setBottomLineColor(_ color: UIColor? = .white) {
+        let view = self.viewWithTag(999)
+        view?.backgroundColor = color
     }
 }
