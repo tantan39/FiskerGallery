@@ -16,6 +16,7 @@ public class RegisterViewModel {
     @Published public var email: String?
     @Published public var country: String?
     @Published public var zipcode: String?
+    @Published public var countries: [String] = ["US", "UK", "Canada", "Germany"]
     
     private var firstPubliser: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest3($fullName, $mobile, $email)

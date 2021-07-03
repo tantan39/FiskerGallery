@@ -74,6 +74,8 @@ public class RegisterViewController: UIViewController {
         textfield.addTarget(self, action: #selector(countryTextfieldEditingChanged), for: .editingChanged)
         textfield.placeholder = "Country or Region"
         textfield.textColor = .white
+        textfield.textfield.inputView = countryPickerView
+        textfield.tintColor = .clear
         return textfield
     }()
     
@@ -92,6 +94,13 @@ public class RegisterViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 26)
         return button
+    }()
+    
+    lazy var countryPickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        return pickerView
     }()
     
     private let mobileCodeViewModel = MobileCodeViewModel()
@@ -139,7 +148,7 @@ public class RegisterViewController: UIViewController {
         self.titleLabel.snp.makeConstraints { maker in
             maker.leading.equalToSuperview().offset(Dimension.shared.normalHorizontal)
             maker.trailing.equalToSuperview().offset(-Dimension.shared.normalHorizontal)
-            maker.top.equalToSuperview().offset(150)
+            maker.top.equalToSuperview().offset(100)
         }
     }
     
@@ -239,5 +248,26 @@ public class RegisterViewController: UIViewController {
     
     @IBAction func tapOnBackgroundView() {
         self.view.endEditing(true)
+    }
+}
+
+extension RegisterViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.viewModel?.countries.count ?? 0
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let country = self.viewModel?.countries[row]
+        return country
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let country = self.viewModel?.countries[row]
+        countryTextfield.text = country
+        countryTextfieldEditingChanged()
     }
 }
