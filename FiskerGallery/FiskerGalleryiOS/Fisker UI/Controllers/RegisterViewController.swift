@@ -47,7 +47,7 @@ public class RegisterViewController: UIViewController {
     }()
     
     lazy var mobileCodeCustomView: MobileCodeCustomView = {
-        let view = MobileCodeCustomView()
+        let view = MobileCodeCustomView(self, viewModel: mobileCodeViewModel)
         return view
     }()
     
@@ -93,6 +93,8 @@ public class RegisterViewController: UIViewController {
         button.titleLabel?.font = .boldSystemFont(ofSize: 26)
         return button
     }()
+    
+    private let mobileCodeViewModel = MobileCodeViewModel()
     
     public convenience init(viewModel: RegisterViewModel) {
         self.init()
@@ -163,9 +165,9 @@ public class RegisterViewController: UIViewController {
     
     private func setupMobileCodeView() {
         self.mobileStackView.addArrangedSubview(mobileCodeCustomView)
-        self.mobileCodeCustomView.snp.makeConstraints { maker in
-            maker.width.equalToSuperview().multipliedBy(0.08)
-        }
+//        self.mobileCodeCustomView.snp.makeConstraints { maker in
+//            maker.width.equalToSuperview().multipliedBy(0.15)
+//        }
         
         let spacing = UIView()
         self.mobileStackView.addArrangedSubview(spacing)
