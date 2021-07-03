@@ -327,6 +327,7 @@ public class RegisterViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
+        guard zipcodeTextfield.textfield.isEditing else { return }
         guard let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
         let keyboardRectangle = keyboardFrame.cgRectValue
@@ -340,7 +341,8 @@ public class RegisterViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        
+        guard zipcodeTextfield.textfield.isEditing else { return }
+
         UIView.animate(withDuration: 0.35) {
             self.view.transform = CGAffineTransform.identity
         }
