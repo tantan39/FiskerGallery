@@ -19,6 +19,8 @@
 		A745A908268FB68B00804545 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8F2268E51A000804545 /* RegisterViewModel.swift */; };
 		A745A909268FB6A000804545 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A901268F859600804545 /* UIColor+Helpers.swift */; };
 		A745A90A268FB6A500804545 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A8FE268F825F00804545 /* Dimension.swift */; };
+		A745A90C268FECFD00804545 /* UITextfield+Validates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90B268FECFC00804545 /* UITextfield+Validates.swift */; };
+		A745A90D268FECFD00804545 /* UITextfield+Validates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A90B268FECFC00804545 /* UITextfield+Validates.swift */; };
 		A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */; };
 		A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B08267A39FD0075E123 /* LoaderOperation.swift */; };
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
@@ -103,6 +105,7 @@
 		A745A8F8268E547B00804545 /* RegisterViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 		A745A8FE268F825F00804545 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		A745A901268F859600804545 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		A745A90B268FECFC00804545 /* UITextfield+Validates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Validates.swift"; sourceTree = "<group>"; };
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A745A901268F859600804545 /* UIColor+Helpers.swift */,
+				A745A90B268FECFC00804545 /* UITextfield+Validates.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -698,6 +702,7 @@
 				A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */,
 				A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */,
 				A75E7B0B267A3AC20075E123 /* GalleryItemCell.swift in Sources */,
+				A745A90C268FECFD00804545 /* UITextfield+Validates.swift in Sources */,
 				A75E7B18267A7FB70075E123 /* GalleryItemCelModel.swift in Sources */,
 				A745A8FF268F825F00804545 /* Dimension.swift in Sources */,
 				A7A3DF28267933D6004CA150 /* SceneDelegate.swift in Sources */,
@@ -716,6 +721,7 @@
 				A745A908268FB68B00804545 /* RegisterViewModel.swift in Sources */,
 				A745A8F9268E547B00804545 /* RegisterViewController+TestHelpers.swift in Sources */,
 				A745A90A268FB6A500804545 /* Dimension.swift in Sources */,
+				A745A90D268FECFD00804545 /* UITextfield+Validates.swift in Sources */,
 				A745A8F1268E25D800804545 /* UIControl+TestHelpers.swift in Sources */,
 				A745A907268FB68700804545 /* RegisterViewController.swift in Sources */,
 			);
