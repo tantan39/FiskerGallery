@@ -16,7 +16,7 @@ public class RegisterViewController: UIViewController {
         stackView.distribution = .fill
         stackView.alignment = .fill
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = 16
         return stackView
     }()
     
@@ -317,26 +317,5 @@ public class RegisterViewController: UIViewController {
     
     @IBAction func tapOnBackgroundView() {
         self.view.endEditing(true)
-    }
-}
-
-extension RegisterViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.viewModel?.countries.count ?? 0
-    }
-
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let country = self.viewModel?.countries[row]
-        return country
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let country = self.viewModel?.countries[row]
-        countryTextfield.text = country
-        countryTextfieldEditingChanged()
     }
 }

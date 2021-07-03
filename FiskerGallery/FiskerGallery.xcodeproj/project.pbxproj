@@ -27,6 +27,8 @@
 		A745A914268FEFAD00804545 /* UITextfield+Customize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A912268FEFAD00804545 /* UITextfield+Customize.swift */; };
 		A745A9162690B8E000804545 /* MobileCodeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A9152690B8DF00804545 /* MobileCodeCustomView.swift */; };
 		A745A9172690B8E000804545 /* MobileCodeCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A9152690B8DF00804545 /* MobileCodeCustomView.swift */; };
+		A745A919269100DD00804545 /* RegisterViewController+CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A918269100DD00804545 /* RegisterViewController+CountryPickerView.swift */; };
+		A745A91A269100DD00804545 /* RegisterViewController+CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745A918269100DD00804545 /* RegisterViewController+CountryPickerView.swift */; };
 		A75E7B07267A390B0075E123 /* ImageLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */; };
 		A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E7B08267A39FD0075E123 /* LoaderOperation.swift */; };
 		A75E7B0A267A3ABE0075E123 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A3DF1126793089004CA150 /* GalleryViewController.swift */; };
@@ -115,6 +117,7 @@
 		A745A90F268FEEB000804545 /* FKTextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FKTextfieldView.swift; sourceTree = "<group>"; };
 		A745A912268FEFAD00804545 /* UITextfield+Customize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextfield+Customize.swift"; sourceTree = "<group>"; };
 		A745A9152690B8DF00804545 /* MobileCodeCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodeCustomView.swift; sourceTree = "<group>"; };
+		A745A918269100DD00804545 /* RegisterViewController+CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+CountryPickerView.swift"; sourceTree = "<group>"; };
 		A75E7AFC26798F8B0075E123 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E7B06267A390B0075E123 /* ImageLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderManager.swift; sourceTree = "<group>"; };
 		A75E7B08267A39FD0075E123 /* LoaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderOperation.swift; sourceTree = "<group>"; };
@@ -323,6 +326,7 @@
 				A75E7B0E267A49C20075E123 /* DetailsViewController.swift */,
 				A745A8F2268E51A000804545 /* RegisterViewModel.swift */,
 				A745A8F4268E522900804545 /* RegisterViewController.swift */,
+				A745A918269100DD00804545 /* RegisterViewController+CountryPickerView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -718,6 +722,7 @@
 				A75E7B09267A39FD0075E123 /* LoaderOperation.swift in Sources */,
 				A745A8F5268E522900804545 /* RegisterViewController.swift in Sources */,
 				A745A8F3268E51A100804545 /* RegisterViewModel.swift in Sources */,
+				A745A919269100DD00804545 /* RegisterViewController+CountryPickerView.swift in Sources */,
 				A745A910268FEEB000804545 /* FKTextfieldView.swift in Sources */,
 				A75E7B0C267A3AC50075E123 /* GalleryViewModel.swift in Sources */,
 				A7A3DF26267933D6004CA150 /* AppDelegate.swift in Sources */,
@@ -748,6 +753,7 @@
 				A745A90D268FECFD00804545 /* UITextfield+Validates.swift in Sources */,
 				A745A911268FEEB000804545 /* FKTextfieldView.swift in Sources */,
 				A745A8F1268E25D800804545 /* UIControl+TestHelpers.swift in Sources */,
+				A745A91A269100DD00804545 /* RegisterViewController+CountryPickerView.swift in Sources */,
 				A745A907268FB68700804545 /* RegisterViewController.swift in Sources */,
 				A745A914268FEFAD00804545 /* UITextfield+Customize.swift in Sources */,
 			);
