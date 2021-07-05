@@ -340,7 +340,12 @@ public class RegisterViewController: UIViewController {
     }
     
     @IBAction func nextButton_Pressed() {
-        self.viewModel?.register { }
+        self.viewModel?.register {
+            let alert = UIAlertController(title: nil, message: "Register successfully", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

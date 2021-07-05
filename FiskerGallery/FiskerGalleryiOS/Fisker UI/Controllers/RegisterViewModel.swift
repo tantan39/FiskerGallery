@@ -48,8 +48,10 @@ public class RegisterViewModel {
     func register(_ completion: @escaping () -> Void) {
         self.isLoading.send(true)
         DispatchQueue(label: "com.fisker.queue").asyncAfter(deadline: DispatchTime.now() + 2) {
-            self.isLoading.send(false)
-            completion()
+            DispatchQueue.main.async {
+                self.isLoading.send(false)
+                completion()
+            }
         }
         
     }
