@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
+        (UIApplication.shared.delegate as? AppDelegate)?.window = window
 //        window?.rootViewController = UINavigationController(rootViewController: galleryUIComposer())
         window?.rootViewController = RegisterViewController(viewModel: RegisterViewModel())
         window?.makeKeyAndVisible()

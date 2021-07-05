@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SVProgressHUD
 
 public class RegisterViewController: UIViewController {
     var viewModel: RegisterViewModel?
@@ -184,10 +185,19 @@ public class RegisterViewController: UIViewController {
     }
     
     private func binding() {
-        self.viewModel?.isValidating.sink(receiveValue: { value in
+        self.viewModel?.isValidating.sink(receiveValue: { [weak self] value in
+            guard let self = self else { return }
             self.nextButton.isEnabled = value
             self.nextButton.backgroundColor = value ? UIColor(hex: "153052") : .gray
 
+        }).store(in: &cancellables)
+        
+        self.viewModel?.isLoading.sink(receiveValue: { isLoading in
+            if isLoading {
+                SVProgressHUD.show()
+            } else {
+                SVProgressHUD.dismiss()
+            }
         }).store(in: &cancellables)
     }
     
@@ -330,9 +340,7 @@ public class RegisterViewController: UIViewController {
     }
     
     @IBAction func nextButton_Pressed() {
-        DispatchQueue(label: "com.fisker.queue").asyncAfter(deadline: DispatchTime.now() + 2) {
-            print("register successfully")
-        }
+        self.viewModel?.register { }
     }
 }
 

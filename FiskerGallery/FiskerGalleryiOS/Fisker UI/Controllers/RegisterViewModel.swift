@@ -23,6 +23,7 @@ public class RegisterViewModel {
     let emailValidate = CurrentValueSubject<Bool, Never>(false)
     let countryValidate = CurrentValueSubject<Bool, Never>(false)
     let zipCodeValidate = CurrentValueSubject<Bool, Never>(false)
+    let isLoading = CurrentValueSubject<Bool,Never>(false)
     
     private var firstPubliser: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest3(fullNameValidate, mobileValidate, emailValidate)
@@ -42,5 +43,14 @@ public class RegisterViewModel {
         return Publishers.CombineLatest (firstPubliser, secondPublisher)
             .map { return $0 && $1 }
             .eraseToAnyPublisher()
+    }
+    
+    func register(_ completion: @escaping () -> Void) {
+        self.isLoading.send(true)
+        DispatchQueue(label: "com.fisker.queue").asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.isLoading.send(false)
+            completion()
+        }
+        
     }
 }
